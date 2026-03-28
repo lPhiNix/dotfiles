@@ -1,0 +1,21 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 35,
+
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["cpu", "memory", "clock"],
+
+  "clock": {
+    "format": " {:%H:%M}"
+  },
+
+  "cpu": {
+    "format": " {usage}"
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G"
+  }
+}
