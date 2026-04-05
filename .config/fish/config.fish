@@ -4,6 +4,8 @@ end
 
 set -g fish_greeting ""
 
+alias f="fastfetch"
+
 alias d="dotfiles"
 
 alias p="sudo pacman"
