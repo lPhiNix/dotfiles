@@ -1,28 +1,148 @@
 * {
-  font-family: JetBrainsMono Nerd Font;
-  font-size: 13px;
+    font-family: "JetBrainsMono Nerd Font", "Fira Sans Semibold", FontAwesome, sans-serif;
+    font-size: 13px;
+    min-height: 0;
 }
 
 window#waybar {
-  background: rgba(15, 15, 15, 0.8);
-  border-radius: 10px;
+    background-color: rgba(30, 30, 46, 0.85);
+    border: 1px solid rgba(137, 180, 250, 0.2);
+    border-radius: 12px;
+    color: #cdd6f4;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* ── Buttons base ─────────────────────────────── */
+button {
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: rgba(137, 180, 250, 0.15);
+}
+
+/* ── Left: custom/main ────────────────────────── */
+#custom-main {
+    color: #89b4fa;
+    font-size: 16px;
+    padding: 0 14px 0 12px;
+    border-radius: 12px 0 0 12px;
+}
+
+/* ── Left: custom/apps ────────────────────────── */
+#custom-apps {
+    color: #cdd6f4;
+    padding: 0 12px;
+    border-right: 1px solid rgba(137, 180, 250, 0.15);
+}
+
+#custom-apps:hover {
+    color: #89b4fa;
+}
+
+/* ── Left: hyprland/workspaces ────────────────── */
+#workspaces {
+    margin: 0 4px;
 }
 
 #workspaces button {
-  padding: 5px 8px;
-  margin: 3px;
-  border-radius: 6px;
-  color: #aaa;
+    padding: 0 8px;
+    color: #6c7086;
+    background-color: transparent;
+    border-radius: 8px;
+    margin: 4px 2px;
+    transition: all 0.2s;
+}
+
+#workspaces button:hover {
+    color: #cdd6f4;
+    background-color: rgba(137, 180, 250, 0.15);
 }
 
 #workspaces button.active {
-  background: #89b4fa;
-  color: #111;
+    color: #1e1e2e;
+    background-color: #89b4fa;
 }
 
-#clock, #cpu, #memory {
-  background: rgba(30, 30, 30, 0.8);
-  margin: 5px 5px;
-  padding: 5px 10px;
-  border-radius: 8px;
+#workspaces button.urgent {
+    background-color: #f38ba8;
+    color: #1e1e2e;
+}
+
+/* ── Center: hyprland/window ──────────────────── */
+#window {
+    color: #a6adc8;
+    padding: 0 12px;
+    font-style: italic;
+}
+
+/* ── Right: shared pill style ─────────────────── */
+#custom-updates,
+#network,
+#bluetooth,
+#memory,
+#clock {
+    padding: 0 12px;
+    color: #cdd6f4;
+}
+
+/* ── Right: custom/updates ────────────────────── */
+#custom-updates {
+    color: #a6e3a1;
+    border-left: 1px solid rgba(137, 180, 250, 0.15);
+}
+
+/* ── Right: network ───────────────────────────── */
+#network {
+    color: #89dceb;
+    border-left: 1px solid rgba(137, 180, 250, 0.15);
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+/* ── Right: bluetooth ─────────────────────────── */
+#bluetooth {
+    color: #89b4fa;
+    border-left: 1px solid rgba(137, 180, 250, 0.15);
+}
+
+#bluetooth.disabled,
+#bluetooth.off {
+    color: #6c7086;
+}
+
+/* ── Right: memory ────────────────────────────── */
+#memory {
+    color: #cba6f7;
+    border-left: 1px solid rgba(137, 180, 250, 0.15);
+}
+
+/* ── Right: clock ─────────────────────────────── */
+#clock {
+    color: #f9e2af;
+    font-weight: bold;
+    padding-right: 14px;
+    border-left: 1px solid rgba(137, 180, 250, 0.15);
+    border-radius: 0 12px 12px 0;
+}
+
+/* ── Tooltip ──────────────────────────────────── */
+tooltip {
+    background-color: rgba(30, 30, 46, 0.95);
+    border: 1px solid rgba(137, 180, 250, 0.3);
+    border-radius: 8px;
+    color: #cdd6f4;
+}
+
+tooltip label {
+    color: #cdd6f4;
 }

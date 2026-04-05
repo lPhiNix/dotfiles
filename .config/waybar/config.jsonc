@@ -1,21 +1,76 @@
+// __        __          _                
+// \ \      / /_ _ _   _| |__   __ _ _ __ 
+//  \ \ /\ / / _` | | | | '_ \ / _` | '__|
+//   \ V  V / (_| | |_| | |_) | (_| | |   
+//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|   
+//                 |___/                 
+//
 {
-  "layer": "top",
+  "layer": "floating",
   "position": "top",
-  "height": 35,
-
-  "modules-left": ["hyprland/workspaces"],
+  "height": 34,
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
+  "spacing": 0,
+  "modules-left": ["custom/main", "custom/apps", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["cpu", "memory", "clock"],
+  "modules-right": ["custom/updates", "network", "bluetooth", "memory", "clock"],
 
-  "clock": {
-    "format": " {:%H:%M}"
+  "custom/main": {
+    "exec": "echo '󰣇'",
+    "interval": "once"
   },
 
-  "cpu": {
-    "format": " {usage}"
+  "custom/apps": {
+    "exec": "echo 'apps'",
+    "interval": "once",
+    "on-click": "rofi -show drun"
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "show-special": true,
+    "on-click": "activate",
+    "persistent-workspaces": {
+      "*": [1, 2, 3, 4]
+    }
+  },
+
+  "custom/updates": {
+    "format": "  {}",
+    "escape": true,
+    "return-type": "json",
+    "interval": 1800
+  },
+
+  "network": {
+    "format-wifi": "󰤨 {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰤭 Desconectado",
+    "tooltip-format": "{ifname}: {ipaddr}\nSeñal: {signalStrength}%",
+    "interval": 5
+  },
+
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱 {device_alias}",
+    "format-disabled": "󰂲",
+    "tooltip-format": "{controller_alias}\n{num_connections} conectados",
+    "on-click": "blueman-manager"
   },
 
   "memory": {
-    "format": " {used:0.1f}G"
+    "format": " {used}GB",
+    "tooltip": true,
+    "interval": 5
+  },
+
+  "clock": {
+    "format": "{:%H:%M %a}",
+    "tooltip": true,
+    "interval": 60
   }
 }
