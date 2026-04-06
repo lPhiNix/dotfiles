@@ -1,36 +1,29 @@
-configuration {
-    modi: "drun";
+configuration{
+    modi: ["drun", "window", "run"];
+    icon-theme: "Papirus-Dark";
     show-icons: true;
-    font: "JetBrainsMono Nerd Font 12";
-}
+    terminal: "kitty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    sidebar-mode: false;
+    display-drun: " ";
+    display-run: " ";
+    display-window: " ";
+    
+    //adding vim keybindings
+    kb-row-up: "Up,Control+k";
+    kb-row-left: "Left,Control+h";
+    kb-row-right: "Right,Control+l";
+    kb-row-down: "Down,Control+j";
 
-window {
-    background-color: rgba(17,17,17,0.95);
-}
+    kb-accept-entry: "Control+z,Control+y,Return,KP_Enter";
 
-* {
-    background-color: #111111;
-    text-color: #ffffff;
+    //fixing up
+    kb-remove-to-eol: "";
+    kb-move-char-back: "Control+b";
+    kb-remove-char-back: "BackSpace";
+    kb-move-char-forward: "Control+f";
+    kb-mode-complete: "Control+o";
 }
-
-window {
-    width: 500px;
-    border-radius: 10px;
-    padding: 15px;
-}
-
-entry {
-    background-color: #1e1e1e;
-    border-radius: 8px;
-    padding: 8px;
-}
-
-element {
-    padding: 8px;
-    border-radius: 6px;
-}
-
-element selected {
-    background-color: #89b4fa;
-    text-color: #111111;
-}
+@theme "~/.config/rofi/themes/theme.rasi"
