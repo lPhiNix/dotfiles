@@ -13,14 +13,9 @@
   "margin-left": 10,
   "margin-right": 10,
   "spacing": 0,
-  "modules-left": ["custom/main", "custom/apps", "hyprland/workspaces"],
+  "modules-left": ["custom/apps", "hyprland/workspaces"],
   "modules-center": ["hyprland/window"],
   "modules-right": ["custom/updates", "network", "bluetooth", "memory", "clock"],
-
-  "custom/main": {
-    "exec": "echo '󰣇'",
-    "interval": "once"
-  },
 
   "custom/apps": {
     "exec": "echo 'apps'",
