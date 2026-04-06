@@ -11,7 +11,7 @@ alias f="fastfetch"
 alias d="dotfiles"
 
 alias p="sudo pacman"
-alias y="sudo yay"
+alias y="yay"
 
 alias v="nvim"
 alias vim="nvim"
