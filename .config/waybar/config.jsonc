@@ -1,71 +1,32 @@
-// __        __          _                
-// \ \      / /_ _ _   _| |__   __ _ _ __ 
-//  \ \ /\ / / _` | | | | '_ \ / _` | '__|
-//   \ V  V / (_| | |_| | |_) | (_| | |   
-//    \_/\_/ \__,_|\__, |_.__/ \__,_|_|   
-//                 |___/                 
-//
-{
-  "layer": "floating",
+{ 
+  "layer": "top",
   "position": "top",
-  "height": 34,
-  "margin-top": 10,
-  "margin-left": 10,
-  "margin-right": 10,
-  "spacing": 0,
-  "modules-left": ["custom/apps", "hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
-  "modules-right": ["custom/updates", "network", "bluetooth", "memory", "clock"],
+  "height": 32,
+  "spacing": 4,
+  "margin-top": 15,
+  "margin-left": 15,
+  "margin-right": 15,
 
-  "custom/apps": {
-    "exec": "echo 'apps'",
-    "interval": "once",
-    "on-click": "rofi -show drun"
-  },
+  "include": [
+    "$HOME/.config/waybar/modules.jsonc"
+  ],
 
-  "hyprland/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
-    "format": "{icon}",
-    "show-special": true,
-    "on-click": "activate",
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4]
-    }
-  },
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces"
+  ],
 
-  "custom/updates": {
-    "format": "  {}",
-    "escape": true,
-    "return-type": "json",
-    "interval": 1800
-  },
+  "modules-center": [],
 
-  "network": {
-    "format-wifi": "󰤨 {essid}",
-    "format-ethernet": "󰈀 {ifname}",
-    "format-disconnected": "󰤭 Desconectado",
-    "tooltip-format": "{ifname}: {ipaddr}\nSeñal: {signalStrength}%",
-    "interval": 5
-  },
-
-  "bluetooth": {
-    "format": "󰂯",
-    "format-connected": "󰂱 {device_alias}",
-    "format-disabled": "󰂲",
-    "tooltip-format": "{controller_alias}\n{num_connections} conectados",
-    "on-click": "blueman-manager"
-  },
-
-  "memory": {
-    "format": " {used}GB",
-    "tooltip": true,
-    "interval": 5
-  },
-
-  "clock": {
-    "format": "{:%H:%M %a}",
-    "tooltip": true,
-    "interval": 60
-  }
+  "modules-right": [
+    "custom/updates",
+    "pulseaudio#headset",
+    "network",
+    "custom/lightning",
+    "custom/bars",
+    "custom/icon1",
+    "custom/icon2",
+    "custom/icon3",
+    "clock"
+  ]
 }
