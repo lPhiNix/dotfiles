@@ -108,3 +108,12 @@ window#waybar {
     color: rgba(70, 70, 90, 0.9);
     padding: 0 8px;
 }
+
+/* Centrado relativo al espacio libre entre módulos izquierda/derecha.
+   Ajusta margin-right si el centrado se ve desplazado en tu pantalla:
+   - Derecha pesada → aumenta margin-right
+   - Izquierda pesada → reduce margin-right (o usa margin-left)       */
+#window {
+    margin-right: 225px;
+    margin-left: 100px;
+}
