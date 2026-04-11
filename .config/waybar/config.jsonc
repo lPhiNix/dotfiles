@@ -1,11 +1,11 @@
 { 
   "layer": "top",
   "position": "top",
-  "height": 32,
-  "spacing": 4,
-  "margin-top": 15,
-  "margin-left": 15,
-  "margin-right": 15,
+  "height": 28,
+  "spacing": 15,
+  "margin-top": 20,
+  "margin-left": 20,
+  "margin-right": 20,
 
   "include": [
     "$HOME/.config/waybar/modules.jsonc"
@@ -13,20 +13,18 @@
 
   "modules-left": [
     "custom/launcher",
-    "hyprland/workspaces"
+    "hyprland/workspaces",
+    "group/quickapps"
   ],
 
-  "modules-center": [],
+  "modules-center": [
+  ],
 
   "modules-right": [
     "custom/updates",
     "pulseaudio#headset",
     "network",
-    "custom/lightning",
-    "custom/bars",
-    "custom/icon1",
-    "custom/icon2",
-    "custom/icon3",
+    "group/quickactions",
     "clock"
   ]
 }

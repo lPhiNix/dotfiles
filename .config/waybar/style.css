@@ -1,31 +1,110 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", sans-serif;
-    font-size: 14px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
     min-height: 0;
 }
 
 window#waybar {
-    background: rgba(17, 17, 27, 0.5);
+    background-color: rgba(20, 20, 30, 0.6);
     color: #cdd6f4;
-    border-radius: 12px;
 }
 
-window#waybar.hidden {
-    opacity: 0.5;
+/* ── Launcher ─────────────────────────────────────────── */
+
+#custom-launcher {
+    background-color: rgba(70, 70, 90, 0.75);
+    border: 2px solid rgba(201, 201, 212, 0.9);
+    border-radius: 3px;
+    padding: 0 2px;
 }
 
-#workspaces,
-#custom-launcher,
+#custom-launcher:hover {
+    background-color: rgba(120, 120, 150, 0.9);
+}
+
+/* ── Workspaces ───────────────────────────────────────── */
+
+#workspaces {
+    background-color: transparent;
+    min-width: 150px;
+}
+
+#workspaces button {
+    background-color: rgba(120, 120, 150, 0.9);
+    border: 2px solid rgba(201, 201, 212, 0.9);
+    border-left: none;
+    border-radius: 0;
+    color: rgba(201, 201, 212, 0.9);
+    min-width: 28px;
+    padding: 0;
+    transition: background-color 0s ease;
+}
+
+#workspaces button:first-child {
+    border-left: 2px solid rgba(201, 201, 212, 0.9);
+    border-radius: 3px 0 0 3px;
+}
+
+#workspaces button:last-child { border-radius: 0 3px 3px 0; }
+#workspaces button:only-child { border-radius: 3px; }
+
+#workspaces button:hover,
+#workspaces button.active {
+    background-color: rgba(70, 70, 90, 0.75);
+}
+
+#workspaces button:hover {
+    background-image: none;
+    box-shadow: none;
+}
+
+#workspaces button.active {
+    min-width: 42px;
+}
+
+/* ── Contenedores transparentes ───────────────────────── */
+
+#quickapps,
+#quickactions {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+}
+
+#quickapps {
+    margin-left: -20px;
+}
+
+/* ── Iconos / botones de acción ───────────────────────── */
+
+#cpu, #memory, #disk,
+#custom-system, #custom-tools, #custom-notification,
+#custom-exit, #custom-terminal, #custom-browser, #custom-files {
+    color: rgba(201, 201, 212, 0.9);
+    font-size: 16px;
+    padding: 0 10px;
+}
+
+/* ── Reloj ────────────────────────────────────────────── */
+
+#clock {
+    background-color: rgba(70, 70, 90, 0.75);
+    border: 2px solid rgba(201, 201, 212, 0.9);
+    border-radius: 3px;
+    color: #cdd6f4;
+    padding: 0 8px;
+}
+
+/* ── Chips de estado ──────────────────────────────────── */
+
 #custom-updates,
 #pulseaudio,
-#network,
-#custom-lightning,
-#custom-bars,
-#custom-icon1,
-#custom-icon2,
-#custom-icon3,
-#clock {
-    padding: 0 10px;
+#network {
+    background-color: rgba(201, 201, 212, 0.9);
+    border: 2px solid rgba(201, 201, 212, 0.9);
+    border-radius: 3px;
+    color: rgba(70, 70, 90, 0.9);
+    padding: 0 8px;
 }
