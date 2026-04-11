@@ -97,6 +97,48 @@ window#waybar {
     padding: 0 8px;
 }
 
+/* ── Taskbar ──────────────────────────────────────────── */
+
+#taskbar {
+    background: transparent;
+    padding: 0;
+}
+
+#taskbar button {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    margin: 0;
+    min-width: 0;
+    padding: 0 10px;
+}
+
+#taskbar button:hover,
+#taskbar button.active,
+#taskbar button:focus {
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+#taskbar button image {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    -gtk-icon-shadow: none;
+}
+
+#taskbar button:hover image,
+#taskbar button:focus image,
+#taskbar button.active image {
+    -gtk-icon-shadow: none;
+    box-shadow: none;
+}
+
 /* ── Chips de estado ──────────────────────────────────── */
 
 #custom-updates,
@@ -109,10 +151,8 @@ window#waybar {
     padding: 0 8px;
 }
 
-/* Centrado relativo al espacio libre entre módulos izquierda/derecha.
-   Ajusta margin-right si el centrado se ve desplazado en tu pantalla:
-   - Derecha pesada → aumenta margin-right
-   - Izquierda pesada → reduce margin-right (o usa margin-left)       */
+/* ── Window ───────────────────────────────────────────── */
+
 #window {
     margin-right: 225px;
     margin-left: 100px;
