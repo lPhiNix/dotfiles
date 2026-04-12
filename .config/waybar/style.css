@@ -15,9 +15,9 @@ window#waybar {
 
 #custom-launcher {
     background-color: rgba(70, 70, 90, 0.75);
-    border: 2px solid rgba(201, 201, 212, 0.9);
-    border-radius: 3px;
-    padding: 0 2px;
+    border: 0.15em solid rgba(201, 201, 212, 0.9);
+    border-radius: 0.25em;
+    padding: 0 0.15em;
 }
 
 #custom-launcher:hover {
@@ -28,27 +28,26 @@ window#waybar {
 
 #workspaces {
     background-color: transparent;
-    min-width: 150px;
 }
 
 #workspaces button {
     background-color: rgba(120, 120, 150, 0.9);
-    border: 2px solid rgba(201, 201, 212, 0.9);
+    border: 0.15em solid rgba(201, 201, 212, 0.9);
     border-left: none;
     border-radius: 0;
     color: rgba(201, 201, 212, 0.9);
-    min-width: 28px;
+    min-width: 2.15em;
     padding: 0;
     transition: background-color 0s ease;
 }
 
 #workspaces button:first-child {
-    border-left: 2px solid rgba(201, 201, 212, 0.9);
-    border-radius: 3px 0 0 3px;
+    border-left: 0.15em solid rgba(201, 201, 212, 0.9);
+    border-radius: 0.25em 0 0 0.25em;
 }
 
-#workspaces button:last-child { border-radius: 0 3px 3px 0; }
-#workspaces button:only-child { border-radius: 3px; }
+#workspaces button:last-child { border-radius: 0 0.25em 0.25em 0; }
+#workspaces button:only-child { border-radius: 0.25em; }
 
 #workspaces button:hover,
 #workspaces button.active {
@@ -60,21 +59,14 @@ window#waybar {
     box-shadow: none;
 }
 
-#workspaces button.active {
-    min-width: 42px;
-}
-
 /* ── Contenedores transparentes ───────────────────────── */
 
 #quickapps,
-#quickactions {
+#quickactions,
+#system {
     background: transparent;
     margin: 0;
     padding: 0;
-}
-
-#quickapps {
-    margin-left: -20px;
 }
 
 /* ── Iconos / botones de acción ───────────────────────── */
@@ -83,18 +75,23 @@ window#waybar {
 #custom-system, #custom-tools, #custom-notification,
 #custom-exit, #custom-terminal, #custom-browser, #custom-files {
     color: rgba(201, 201, 212, 0.9);
-    font-size: 16px;
-    padding: 0 10px;
+    font-size: 1.25em;
+    padding: 0 0.625em;
+}
+
+#custom-system {
+    font-size: 1.55em;
+    padding: 0 0.5em;
 }
 
 /* ── Reloj ────────────────────────────────────────────── */
 
 #clock {
     background-color: rgba(70, 70, 90, 0.75);
-    border: 2px solid rgba(201, 201, 212, 0.9);
-    border-radius: 3px;
+    border: 0.15em solid rgba(201, 201, 212, 0.9);
+    border-radius: 0.25em;
     color: #cdd6f4;
-    padding: 0 8px;
+    padding: 0 0.6em;
 }
 
 /* ── Taskbar ──────────────────────────────────────────── */
@@ -109,9 +106,9 @@ window#waybar {
     border: none;
     border-radius: 0;
     box-shadow: none;
-    margin: 0;
+    margin-right: -0.4em;
     min-width: 0;
-    padding: 0 10px;
+    padding: 0 0.75em;
 }
 
 #taskbar button:hover,
@@ -145,15 +142,15 @@ window#waybar {
 #pulseaudio,
 #network {
     background-color: rgba(201, 201, 212, 0.9);
-    border: 2px solid rgba(201, 201, 212, 0.9);
-    border-radius: 3px;
+    border: 0.15em solid rgba(201, 201, 212, 0.9);
+    border-radius: 0.25em;
     color: rgba(70, 70, 90, 0.9);
-    padding: 0 8px;
+    padding: 0 0.6em;
 }
 
 /* ── Window ───────────────────────────────────────────── */
 
 #window {
-    margin-right: 225px;
-    margin-left: 100px;
+    margin-right: 17.3em;
+    margin-left: 7.7em;
 }
