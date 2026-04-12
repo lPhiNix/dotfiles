@@ -19,11 +19,16 @@
         {
             "key": "│ {#31} user    {#keys}│",
             "type": "title",
-            "format": "{user-name}@{host-name}"
+            "format": "{user-name}"
         },
         {
-            "key": "│ {#33}󰅐 time    {#keys}│",
-            "type": "datetime"
+            "key": "│ {#32}󰇅 hname   {#keys}│",
+            "type": "title",
+            "format": "{host-name}"
+        },
+        {            
+            "key": "│ {#33}󰅐 uptime  {#keys}│",
+            "type": "uptime"
         },
         {
             "key": "│ {#34}{icon} distro  {#keys}│",
