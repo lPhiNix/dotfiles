@@ -7,7 +7,7 @@
 }
 
 window#waybar {
-    background-color: rgba(20, 20, 30, 0.6);
+    background-color: rgba(20, 20, 30, 0.35);
     color: #cdd6f4;
 }
 
@@ -71,7 +71,7 @@ window#waybar {
 
 /* ── Iconos / botones de acción ───────────────────────── */
 
-#cpu, #memory, #disk,
+#cpu, #memory, #custom-gpu, #disk,
 #custom-system, #custom-tools, #custom-notification,
 #custom-exit, #custom-terminal, #custom-browser, #custom-files {
     color: rgba(201, 201, 212, 0.9);
