@@ -1,0 +1,166 @@
+//  __  __           _       _
+// |  \/  | ___   __| |_   _| | ___  ___
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __|
+// | |  | | (_) | (_| | |_| | |  __/\__ \
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/
+//
+// Modules configuration for Waybar
+{
+    "custom/launcher": {
+        "format": " apps ",
+        "on-click": "pkill rofi || rofi -show drun -replace",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate",
+        "sort-by-number": true,
+        "active-only": false,
+        "all-outputs": false,
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4]
+        }
+    },
+
+    "custom/terminal": {
+        "format": "",
+        "on-click": "kitty",
+        "tooltip": false
+    },
+
+    "custom/browser": {
+        "format": "",
+        "on-click": "brave",
+        "tooltip": false
+    },
+
+    "custom/files": {
+        "format": "",
+        "on-click": "nautilus",
+        "tooltip": false
+    },
+    "group/quickapps": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/terminal",
+            "custom/browser",
+            "custom/files"
+        ]
+    },
+    "custom/updates": {
+        "format": "  {}",    
+        "escape": true,    
+        "return-type": "json",        
+        "exec": "~/.config/scripts/check_updates.sh",
+        "interval": 1800,
+        "hide-empty-text": true,
+        "on-click": "hyprctl dispatch exec '[float;center;size 700 500] kitty --title waybar-installer -e ~/.config/scripts/install_updates.sh'",
+        "tooltip": false
+    },
+
+    "pulseaudio#headset": {
+        "format": "󰋋  {volume}%",
+        "format-muted": "󰋋  muted",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+
+    "network": {
+        "format-wifi": "󰖩  {essid}",
+        "format-ethernet": "󰈀  {ifname}",
+        "format-disconnected": "󰖪  Disconnected",
+        "on-click": "hyprctl dispatch exec '[float;center;size 700 500] kitty -e nmtui'",
+        "tooltip": false
+    },
+
+    "group/system": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "system-child",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/system",
+            "cpu",
+            "memory",
+            "custom/gpu",
+            "disk"
+        ]
+    },
+
+    "custom/system": {
+        "format": "󰺢",
+        "tooltip": false
+    },
+
+    "cpu": {
+        "format": " {usage}%",
+        "interval": 2,
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": " {used:0.1f}GB",
+        "interval": 5,
+        "tooltip": false
+    },
+
+    "custom/gpu": {
+        "format": "󰢮 {}%",
+        "exec": "nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits | tr -d ' '",
+        "interval": 2,
+        "tooltip": false
+    },
+
+    "disk": {
+        "format": "󰋊 {used}",
+        "path": "/",
+        "interval": 60,
+        "tooltip": false
+    },
+
+    "custom/tools": {
+        "format": "",
+        "tooltip": false
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": ["kitty"]
+    },
+    "custom/notification": {
+        "format": "",
+        "tooltip": false
+    },
+
+    "custom/exit": {
+        "format": "",
+        "tooltip": false
+    },
+    "group/quickactions": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/system",
+            "custom/tools",
+            "wlr/taskbar",
+            "custom/notification",
+            "custom/exit"
+        ]
+    },
+
+    "clock": {
+        "format": "{:%H:%M %a}",
+        "tooltip": false
+    },
+
+    "hyprland/window": {
+        "max-length": 45,
+        "separate-outputs": false,
+        "tooltip": false
+    }
+}
