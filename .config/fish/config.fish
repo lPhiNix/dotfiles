@@ -45,6 +45,6 @@ alias cls="clear"
 alias q="exit"
 alias shutdown="shutdown -h now"
 
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-thefuck --alias | source
+alias clear="command clear; fastfetch -c config_promt.jsonc"
 
+alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
