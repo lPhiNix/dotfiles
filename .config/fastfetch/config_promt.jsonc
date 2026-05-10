@@ -68,7 +68,8 @@
         {
             "key": "│ {#36}󰢮 gpu     {#keys}│",
             "type": "gpu",
-            "hideType": "integrated"
+            "hideType": "integrated",
+            "temp": true
         },
         {
             "key": "│ {#31}󰩟 network {#keys}│",
