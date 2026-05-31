@@ -1,115 +1,173 @@
+/*
+ * __        __          _                  ____  _         _
+ * \ \      / /_ _ _   _| |__   __ _ _ __  / ___|| |_ _   _| | ___
+ *  \ \ /\ / / _` | | | | '_ \ / _` | '__| \___ \| __| | | | |/ _ \
+ *   \ V  V / (_| | |_| | |_) | (_| | |     ___) | |_| |_| | |  __/
+ *    \_/\_/ \__,_|\__, |_.__/ \__,_|_|    |____/ \__|\__, |_|\___|
+ *                 |___/                              |___/
+ * -----------------------------------------------------
+ * Waybar CSS Styling
+ * by lPhiNix
+*/
+
+/*
+ * -----------------------------------------------------
+ * Imports and Variables
+ * -----------------------------------------------------
+ */
 @import url("colors.css");
 
+/*
+ * -----------------------------------------------------
+ * General
+ * -----------------------------------------------------
+ * These rules apply to all elements and set up the base font, border, and spacing.
+ */
 * {
     border: none;
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 13px;
     min-height: 0;
+    margin: 0.1em 0;
 }
 
+/*
+ * -----------------------------------------------------
+ * Waybar Main Window
+ * -----------------------------------------------------
+ * Styles for the main waybar container window.
+ */
 window#waybar {
-    background: transparent;
-    color: @color-text;
+    background: @primary_container;
+    border-radius: 0.5em;
+    color: @on_surface;
 }
 
-.modules-left,
-.modules-center,
-.modules-right {
-    margin-top: 0.3em;
-    margin-bottom: 0.3em;
+/*
+ * -----------------------------------------------------
+ * Module Containers
+ * -----------------------------------------------------
+ * Padding for left and right module containers.
+ */
+.modules-left { 
+    padding-left: 0.25em; 
+}
+.modules-right { 
+    padding-right: 0.25em; 
 }
 
-/* ── Launcher ─────────────────────────────────────────── */
-
+/*
+ * -----------------------------------------------------
+ * Custom Launcher Button
+ * -----------------------------------------------------
+ * Styles for the custom launcher module and its hover state.
+ */
 #custom-launcher {
-    background-color: @color-bg;
-    border: 0.15em solid @color-fg;
+    background-color: @on_primary;
+    border: 0.15em solid @primary;
     border-radius: 0.25em;
     padding: 0 0.15em;
 }
-
-#custom-launcher:hover {
-    background-color: @color-bg-mid;
+#custom-launcher:hover { 
+    background-color: @tertiary_container; 
 }
 
-/* ── Workspaces ───────────────────────────────────────── */
-
-#workspaces {
-    background-color: transparent;
+/*
+ * -----------------------------------------------------
+ * Workspaces Module
+ * -----------------------------------------------------
+ * Styles for the workspace buttons and their states.
+ */
+#workspaces { 
+    background: transparent; 
 }
-
 #workspaces button {
-    background-color: @color-bg-mid;
-    border: 0.15em solid @color-fg;
+    background-color: @inverse_primary;
+    border: 0.15em solid @primary;
     border-left: none;
     border-radius: 0;
-    color: @color-fg;
+    color: @primary;
     min-width: 2.15em;
     padding: 0;
     transition: background-color 0s ease;
 }
-
 #workspaces button:first-child {
-    border-left: 0.15em solid @color-fg;
+    border-left: 0.15em solid @primary;
     border-radius: 0.25em 0 0 0.25em;
 }
-
-#workspaces button:last-child { border-radius: 0 0.25em 0.25em 0; }
-#workspaces button:only-child { border-radius: 0.25em; }
-
+#workspaces button:last-child { 
+    border-radius: 0 0.25em 0.25em 0; 
+}
+#workspaces button:only-child { 
+    border-radius: 0.25em; 
+}
 #workspaces button:hover,
 #workspaces button.active {
-    background-color: @color-bg;
-}
-
-#workspaces button:hover {
+    background-color: @on_primary;
     background-image: none;
     box-shadow: none;
 }
 
-/* ── Contenedores transparentes ───────────────────────── */
-
-#quickapps,
-#quickactions,
-#system {
+/*
+ * -----------------------------------------------------
+ * Quick Apps, Actions, and System Modules
+ * -----------------------------------------------------
+ * Transparent background and reset margin/padding for these modules.
+ */
+#quickapps, #quickactions, #system {
     background: transparent;
     margin: 0;
     padding: 0;
 }
 
-/* ── Iconos / botones de acción ───────────────────────── */
-
+/*
+ * -----------------------------------------------------
+ * System Info and Custom Modules
+ * -----------------------------------------------------
+ * Styles for CPU, memory, GPU, disk, and other custom modules.
+ */
 #cpu, #memory, #custom-gpu, #disk,
-#custom-system, #custom-tools, #custom-notification,
-#custom-exit, #custom-terminal, #custom-browser, #custom-files {
-    color: @color-fg;
+#custom-system, 
+#custom-tools, 
+#custom-notification,
+#custom-exit, 
+#custom-terminal, 
+#custom-browser, 
+#custom-files {
+    color: @primary;
     font-size: 1.25em;
     padding: 0 0.625em;
 }
-
 #custom-system {
     font-size: 1.55em;
     padding: 0 0.5em;
 }
 
-/* ── Reloj ────────────────────────────────────────────── */
-
+/*
+ * -----------------------------------------------------
+ * Clock Module
+ * -----------------------------------------------------
+ * Styles for the clock widget.
+ */
 #clock {
-    background-color: @color-bg;
-    border: 0.15em solid @color-fg;
+    background-color: @on_primary;
+    border: 0.15em solid @primary;
     border-radius: 0.25em;
-    color: @color-text;
+    color: @on_surface;
     padding: 0 0.6em;
 }
 
-/* ── Taskbar ──────────────────────────────────────────── */
-
-#taskbar {
-    background: transparent;
-    padding: 0;
+/*
+ * -----------------------------------------------------
+ * Taskbar Module
+ * -----------------------------------------------------
+ * Styles for the taskbar and its buttons, including hover and active states.
+ */
+#taskbar { 
+    background: transparent; 
+    padding: 0; 
 }
-
 #taskbar button {
     background: transparent;
     border: none;
@@ -119,7 +177,6 @@ window#waybar {
     min-width: 0;
     padding: 0 0.75em;
 }
-
 #taskbar button:hover,
 #taskbar button.active,
 #taskbar button:focus {
@@ -130,14 +187,12 @@ window#waybar {
     box-shadow: none;
     outline: none;
 }
-
 #taskbar button image {
     border: none;
     box-shadow: none;
     outline: none;
     -gtk-icon-shadow: none;
 }
-
 #taskbar button:hover image,
 #taskbar button:focus image,
 #taskbar button.active image {
@@ -145,21 +200,27 @@ window#waybar {
     box-shadow: none;
 }
 
-/* ── Chips de estado ──────────────────────────────────── */
-
-#custom-updates,
-#pulseaudio,
-#network {
-    background-color: @color-fg;
-    border: 0.15em solid @color-fg;
+/*
+ * -----------------------------------------------------
+ * Updates, Audio, and Network Modules
+ * -----------------------------------------------------
+ * Styles for updates, pulseaudio, and network widgets.
+ */
+#custom-updates, #pulseaudio, #network {
+    background-color: @primary;
+    border: 0.15em solid @primary;
     border-radius: 0.25em;
-    color: @color-bg-solid;
+    color: @primary_container;
     padding: 0 0.6em;
 }
 
-/* ── Window ───────────────────────────────────────────── */
-
+/*
+ * -----------------------------------------------------
+ * Window Title Module
+ * -----------------------------------------------------
+ * Adds horizontal margin to the window title area.
+ */
 #window {
-    margin-right: 17.3em;
-    margin-left: 7.7em;
+    margin-right: 10em;
+    margin-left: 10em;
 }
