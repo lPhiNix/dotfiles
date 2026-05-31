@@ -28,7 +28,6 @@
     border-radius: 0;
     font-family: "JetBrainsMono Nerd Font", monospace;
     font-size: 13px;
-    min-height: 0;
     margin: 0.1em 0;
 }
 
@@ -39,7 +38,7 @@
  * Styles for the main waybar container window.
  */
 window#waybar {
-    background: @primary_container;
+    background: linear-gradient(90deg, @on_primary_fixed 0%, @inverse_primary 50%, @on_primary_fixed 100%);
     border-radius: 0.5em;
     color: @on_surface;
 }
