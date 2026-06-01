@@ -126,6 +126,7 @@ window#waybar {
  * -----------------------------------------------------
  * Styles for CPU, memory, GPU, disk, and other custom modules.
  */
+#custom-icon,
 #cpu, #memory, #custom-gpu, #disk,
 #custom-system, 
 #custom-tools, 
