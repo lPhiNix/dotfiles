@@ -1,11 +1,13 @@
 /*
-#            __ _ 
-# _ __ ___  / _(_)
-#| '__/ _ \| |_| |
-#| | | (_) |  _| |
-#|_|  \___/|_| |_|
+#  ____        __ _ 
+# |  _ \ ___  / _(_)
+# | |_) / _ \| |_| |
+# |  _ < (_) |  _| |
+# |_| \_\___/|_| |_|
 #   
-# Configuration             
+# --------------------------------------------------------------
+# Rofi configuration file
+# by lPhiNix            
 */
 
 /* ---- Configuration ---- */
@@ -30,29 +32,20 @@ configuration {
 /* ---- Load colors ---- */
 @theme "~/.config/rofi/colors.rasi"
 
-/* ---- Load wallpaper ---- */
-@import "~/.cache/ml4w/hyprland-dotfiles/current_wallpaper.rasi"
-
-/* ---- Load border width ---- */
-@import "~/.config/ml4w/settings/rofi-border.rasi"
-
-/* ---- Load border radius ---- */
-@import "~/.config/ml4w/settings/rofi-border-radius.rasi"
-
 // Main //
 window {
-    height:                      35em;
-    width:                       56em;
+    height:                      31em;
+    width:                       50em;
     transparency:                "real";
     fullscreen:                  false;
     enabled:                     true;
     cursor:                      "default";
     spacing:                     0em;
     padding:                     0em;
-    border:                      @border-width;
+    border:                      2px;
     border-color:                @primary;
-    border-radius:               @border-radius;
-    background-color:            @background;
+    border-radius:               0;
+    background-color:            transparent;
 }
 
 mainbox {
@@ -62,7 +55,6 @@ mainbox {
     orientation:                 horizontal;
     children:                    [ "imagebox" , "listbox" ];
     background-color:            transparent;
-    background-image:            @current-image;
 }
 
 imagebox {
@@ -91,14 +83,14 @@ button {
     border-radius:               2em;
     border:                      0;    
     cursor:                      pointer;
-    background-color:            @background;
+    background-color:            @inverse-primary;
     text-color:                  @on-surface;
 }
 
 button selected {
     padding:                     15px;
     border-radius:               2em;    
-    background-color:            @surface;
+    background-color:            @on-primary;
     text-color:                  @on-surface;
 }
 
@@ -170,9 +162,9 @@ element {
 }
 
 element selected.normal {
-    background-color:            @surface;
-    text-color:                  @on-surface;
-    border-radius:               1.5em;
+    background-color:            @primary;
+    text-color:                  @surface;
+    border-radius:               0.25em;
 }
 
 element normal.normal {
@@ -216,7 +208,7 @@ element alternate.active {
 }
 
 element-icon {
-    size:                        3em;
+    size:                        2.5em;
     cursor:                      inherit;
     background-color:            transparent;
     text-color:                  inherit;
