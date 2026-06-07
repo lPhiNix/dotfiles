@@ -5,7 +5,7 @@ end
 set -g fish_greeting ""
 
 fastfetch -c config_promt.jsonc
-oh-my-posh init fish --config ~/.config/ohmyposh/promt.omp.json | source
+oh-my-posh init fish --config ~/.config/ohmyposh/promt.omp.jsonc | source
 
 alias f="fastfetch"
 
