@@ -8,10 +8,6 @@
 // Modules configuration for Waybar
 // by lPhiNix
 {
-    "custom/icon": {
-        "format": "󰣇",
-        "tooltip": false
-    },
     "custom/launcher": {
         "format": " apps ",
         "on-click": "pkill rofi || rofi -show drun -replace",

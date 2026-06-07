@@ -38,7 +38,7 @@
  * Styles for the main waybar container window.
  */
 window#waybar {
-    background: linear-gradient(90deg, @on_primary_fixed 0%, @inverse_primary 50%, @on_primary_fixed 100%);
+    background: transparent;
     border-radius: 0.5em;
     color: @on_surface;
 }
@@ -64,6 +64,7 @@ window#waybar {
  */
 #custom-launcher {
     background-color: @on_primary;
+    color: @primary;
     border: 0.15em solid @primary;
     border-radius: 0.25em;
     padding: 0 0.15em;
@@ -126,7 +127,6 @@ window#waybar {
  * -----------------------------------------------------
  * Styles for CPU, memory, GPU, disk, and other custom modules.
  */
-#custom-icon,
 #cpu, #memory, #custom-gpu, #disk,
 #custom-system, 
 #custom-tools, 

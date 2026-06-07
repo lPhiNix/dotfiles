@@ -22,7 +22,6 @@
   ],
 
   "modules-left": [
-    "custom/icon",
     "custom/launcher",
     "hyprland/workspaces",
     "group/quickapps"
