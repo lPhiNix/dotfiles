@@ -12,20 +12,28 @@
 fallback_color = "#000000"
 
 [templates.hyprland]
-input_path = '~/.config/matugen/templates/hypr-colors.lua'
+input_path = '~/.config/matugen/templates/hyprland-palette.lua'
 output_path = '~/.config/hypr/colors.lua'
 post_hook = 'hyprctl reload'
 
 [templates.waybar]
-input_path = "~/.config/matugen/templates/color-palette.css"
+input_path = "~/.config/matugen/templates/waybar-palette.css"
 output_path = "~/.config/waybar/colors.css"
 post_hook = '~/.config/waybar/launch.sh'
 
 [templates.ohmyposh]
-input_path = '~/.config/matugen/templates/ohmyposh-colors.json'
-output_path = '~/.config/ohmyposh/promt.omp.json'
+input_path = '~/.config/matugen/templates/ohmyposh-theme.jsonc'
+output_path = '~/.config/ohmyposh/promt.omp.jsonc'
 
 [templates.kitty]
-input_path = "~/.config/matugen/templates/kitty-colors.conf"
+input_path = "~/.config/matugen/templates/kitty-palette.conf"
 output_path = "~/.config/kitty/colors.conf"
 post_hook = 'pkill -SIGUSR1 kitty'
+
+[templates.rofi]
+input_path = '~/.config/matugen/templates/rofi-palette.rasi'
+output_path = '~/.config/rofi/colors.rasi'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop.theme'
+output_path = '~/.config/btop/themes/btop.theme'
