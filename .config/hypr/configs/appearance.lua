@@ -103,6 +103,14 @@ hl.layer_rule({
     xray         = true
 })
 
+-- https://wiki.hypr.land/Configuring/Basics/Window-Rules/#layer-rules
+-- Layer rules for rofi
+hl.layer_rule({
+    match        = { namespace = "rofi" },
+    blur         = true,
+    xray         = false
+})
+
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#misc
 hl.config({
     misc = {
