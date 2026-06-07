@@ -9,6 +9,12 @@
 # by lPhiNix
 
 [config]
+fallback_color = "#000000"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hypr-colors.lua'
+output_path = '~/.config/hypr/colors.lua'
+post_hook = 'hyprctl reload'
 
 [templates.waybar]
 input_path = "~/.config/matugen/templates/color-palette.css"
