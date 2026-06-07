@@ -57,7 +57,7 @@
         "exec": "~/.config/scripts/check_updates.sh",
         "interval": 1800,
         "hide-empty-text": true,
-        "on-click": "kitty --title waybar-installer -e ~/.config/scripts/install_updates.sh",
+        "on-click": "kitty --class floating-terminal --title waybar-installer -e ~/.config/scripts/install_updates.sh",
         "tooltip": false
     },
 
@@ -72,7 +72,7 @@
         "format-wifi": "󰖩  {essid}",
         "format-ethernet": "󰈀  {ifname}",
         "format-disconnected": "󰖪  Disconnected",
-        "on-click": "kitty -e nmtui",
+        "on-click": "kitty --class floating-terminal -e nmtui",
         "tooltip": false
     },
 
