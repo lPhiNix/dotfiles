@@ -17,6 +17,8 @@
 -- You can split this configuration into multiple files
 -- Create your files separately and then link them to this file like this:
 -- require("myColors")
+require("colors")
+
 require("configs.workspaces")
 require("configs.monitors")
 require("configs.programs")

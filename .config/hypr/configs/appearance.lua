@@ -10,11 +10,11 @@ hl.config({
         gaps_in  = 5,
         gaps_out = 20,
 
-        border_size = 0,
+        border_size = 2,
 
         col = {
-            active_border   = { colors = {"rgba(33ccffee)", "rgba(00ff99ee)"}, angle = 45 },
-            inactive_border = "rgba(595959aa)",
+            active_border   = primary,
+            inactive_border = outline_variant,
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
@@ -38,7 +38,7 @@ hl.config({
             enabled      = true,
             range        = 4,
             render_power = 3,
-            color        = 0xee1a1a1a,
+            color        = shadow,
         },
 
         blur = {
@@ -100,7 +100,7 @@ hl.config({
 hl.layer_rule({
     match        = { namespace = "waybar" },
     blur         = true,
-    ignore_alpha = 0.5,
+    xray         = true
 })
 
 -- https://wiki.hypr.land/Configuring/Basics/Variables/#misc
