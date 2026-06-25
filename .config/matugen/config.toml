@@ -11,6 +11,11 @@
 [config]
 fallback_color = "#000000"
 
+[config.wallpaper]
+command = "awww"
+arguments = ["img", "--transition-type", "any", "--transition-fps", "60"]
+set = true
+
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-palette.lua'
 output_path = '~/.config/hypr/colors.lua'
@@ -34,6 +39,28 @@ post_hook = 'pkill -SIGUSR1 kitty'
 input_path = '~/.config/matugen/templates/rofi-palette.rasi'
 output_path = '~/.config/rofi/colors.rasi'
 
+[templates.gtk3]
+input_path = '~/.config/matugen/templates/gtk-palette.css'
+output_path = '~/.config/gtk-3.0/colors.css'
+post_hook = "gsettings set org.gnome.desktop.interface gtk-theme 'adw-gtk3-dark' && gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'"
+
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/gtk-palette.css'
+output_path = '~/.config/gtk-4.0/colors.css'
+
+[templates.qt]
+input_path = '~/.config/matugen/templates/qt-palette.conf'
+output_path = '~/.config/qt6ct/colors.conf'
+
+[templates.shell]
+input_path = '~/.config/matugen/templates/gum-palette.sh'
+output_path = '~/.config/scripts/shell-colors.sh'
+
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop.theme'
 output_path = '~/.config/btop/themes/btop.theme'
+
+[templates.cava]
+input_path = '~/.config/matugen/templates/cava-palette.theme'
+output_path = '~/.config/cava/themes/matugen'
+post_hook = 'pkill -USR1 cava'
