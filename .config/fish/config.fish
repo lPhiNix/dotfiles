@@ -11,7 +11,8 @@ alias f="fastfetch"
 
 alias d="dotfiles"
 
-alias p="sudo pacman"
+alias sp="sudo pacman"
+alias p="pacman"
 alias y="yay"
 
 alias v="nvim"
@@ -47,4 +48,10 @@ alias shutdown="shutdown -h now"
 
 alias clear="command clear; fastfetch -c config_promt.jsonc"
 
+alias cmatrix="cmatrix -C blue"
+
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Added by LM Studio CLI (lms)
+set -gx PATH $PATH /home/phinix/.lmstudio/bin
+# End of LM Studio CLI section
+
