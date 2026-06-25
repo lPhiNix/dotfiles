@@ -1,11 +1,13 @@
 #!/bin/sh
 
 # Save directory in HHD
-SAVE_DIR=/media/datos1/Pictures/Screenshots
+SAVE_DIR=~/Pictures/screenshots
 
 # Filename based on date
 FILENAME="Screenshot-$(date +%F_%T).png"
 FILEPATH="$SAVE_DIR/$FILENAME"
+
+mkdir -p "$SAVE_DIR"
 
 if [ "$1" = "area" ]; then
     sleep 1
