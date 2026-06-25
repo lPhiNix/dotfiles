@@ -24,10 +24,14 @@
  * These rules apply to all elements and set up the base font, border, and spacing.
  */
 * {
-    border: none;
-    border-radius: 0;
-    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-family: "JetBrainsMono Nerd Font", "Noto Color Emoji", monospace;
     font-size: 13px;
+
+    color: @primary;
+
+    border: none @primary;
+    border-radius: 0.25em;
+
     margin: 0.1em 0;
 }
 
@@ -39,21 +43,35 @@
  */
 window#waybar {
     background: transparent;
-    border-radius: 0.5em;
-    color: @on_surface;
 }
 
 /*
  * -----------------------------------------------------
- * Module Containers
+ * Window Title Module
  * -----------------------------------------------------
- * Padding for left and right module containers.
+ * Adds horizontal margin to the window title area.
  */
-.modules-left { 
-    padding-left: 0.25em; 
+#window {
+    margin-right: 10em;
+    margin-left: 10em;
+    font-weight: bold;
 }
-.modules-right { 
-    padding-right: 0.25em; 
+
+/*
+ * -----------------------------------------------------
+ * Generic Buttons
+ * -----------------------------------------------------
+ * Styles for generic buttons.
+ */
+button:hover,
+button.active,
+button:focus {
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
 }
 
 /*
@@ -64,13 +82,10 @@ window#waybar {
  */
 #custom-launcher {
     background-color: @on_primary;
-    color: @primary;
-    border: 0.15em solid @primary;
-    border-radius: 0.25em;
-    padding: 0 0.15em;
+    border: 0.15em solid;
 }
 #custom-launcher:hover { 
-    background-color: @tertiary_container; 
+    background-color: @on_primary_fixed_variant; 
 }
 
 /*
@@ -79,15 +94,13 @@ window#waybar {
  * -----------------------------------------------------
  * Styles for the workspace buttons and their states.
  */
-#workspaces { 
-    background: transparent; 
-}
-#workspaces button {
+#workspaces {
     background-color: @inverse_primary;
-    border: 0.15em solid @primary;
+}
+#workspaces button { 
+    border: 0.15em solid;
     border-left: none;
     border-radius: 0;
-    color: @primary;
     min-width: 2.15em;
     padding: 0;
     transition: background-color 0s ease;
@@ -135,7 +148,6 @@ window#waybar {
 #custom-terminal, 
 #custom-browser, 
 #custom-files {
-    color: @primary;
     font-size: 1.25em;
     padding: 0 0.625em;
 }
@@ -146,81 +158,46 @@ window#waybar {
 
 /*
  * -----------------------------------------------------
+ * Taskbar Module
+ * -----------------------------------------------------
+ * Styles for the taskbar and its buttons, including hover and active states.
+ */
+#taskbar {
+    background-color: @primary;
+    padding: 0 0.6em;
+}
+
+#taskbar button {
+    padding: 0 0.3em;
+}
+
+#taskbar.empty {
+    opacity: 0; 
+    padding: 0; 
+    margin: 0; 
+    border: none; 
+}
+
+/*
+ * -----------------------------------------------------
+ * Updates, Audio, Network and Taskbar Modules
+ * -----------------------------------------------------
+ * Styles for updates, pulseaudio, and network widgets.
+ */
+#custom-updates, #pulseaudio, #network {
+    color: @primary_container;
+    background-color: @primary;
+    padding: 0 0.6em;
+}
+
+/*
+ * -----------------------------------------------------
  * Clock Module
  * -----------------------------------------------------
  * Styles for the clock widget.
  */
 #clock {
     background-color: @on_primary;
-    border: 0.15em solid @primary;
-    border-radius: 0.25em;
-    color: @on_surface;
+    border: 0.15em solid;
     padding: 0 0.6em;
-}
-
-/*
- * -----------------------------------------------------
- * Taskbar Module
- * -----------------------------------------------------
- * Styles for the taskbar and its buttons, including hover and active states.
- */
-#taskbar { 
-    background: transparent; 
-    padding: 0; 
-}
-#taskbar button {
-    background: transparent;
-    border: none;
-    border-radius: 0;
-    box-shadow: none;
-    margin-right: -0.4em;
-    min-width: 0;
-    padding: 0 0.75em;
-}
-#taskbar button:hover,
-#taskbar button.active,
-#taskbar button:focus {
-    background: transparent;
-    background-color: transparent;
-    background-image: none;
-    border: none;
-    box-shadow: none;
-    outline: none;
-}
-#taskbar button image {
-    border: none;
-    box-shadow: none;
-    outline: none;
-    -gtk-icon-shadow: none;
-}
-#taskbar button:hover image,
-#taskbar button:focus image,
-#taskbar button.active image {
-    -gtk-icon-shadow: none;
-    box-shadow: none;
-}
-
-/*
- * -----------------------------------------------------
- * Updates, Audio, and Network Modules
- * -----------------------------------------------------
- * Styles for updates, pulseaudio, and network widgets.
- */
-#custom-updates, #pulseaudio, #network {
-    background-color: @primary;
-    border: 0.15em solid @primary;
-    border-radius: 0.25em;
-    color: @primary_container;
-    padding: 0 0.6em;
-}
-
-/*
- * -----------------------------------------------------
- * Window Title Module
- * -----------------------------------------------------
- * Adds horizontal margin to the window title area.
- */
-#window {
-    margin-right: 10em;
-    margin-left: 10em;
 }

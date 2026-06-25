@@ -149,7 +149,6 @@
         "modules": [
             "group/system",
             "custom/tools",
-            "wlr/taskbar",
             "custom/notification",
             "custom/exit"
         ]
