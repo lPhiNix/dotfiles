@@ -10,7 +10,6 @@
 # by lPhiNix            
 */
 
-/* ---- Configuration ---- */
 configuration {
     modi:                       "drun,filebrowser,window,run";
     font:                       "JetBrainsMono Nerd Font 11";
@@ -25,14 +24,10 @@ configuration {
     me-select-entry:            "";
     me-accept-entry:            "MousePrimary";
     window-format:              "{w} · {c} · {t}";
-    
-    
 }
 
-/* ---- Load colors ---- */
 @theme "~/.config/rofi/colors.rasi"
 
-// Main //
 window {
     height:                      31em;
     width:                       50em;
@@ -68,7 +63,6 @@ dummy {
     background-color:            transparent;
 }
 
-// Modes //
 mode-switcher {
     orientation:                 horizontal;
     width:                       6.6em;
@@ -80,7 +74,7 @@ mode-switcher {
 
 button {
     padding:                     15px;
-    border-radius:               2em;
+    border-radius:               0.5em;
     border:                      0;    
     cursor:                      pointer;
     background-color:            @inverse-primary;
@@ -89,17 +83,16 @@ button {
 
 button selected {
     padding:                     15px;
-    border-radius:               2em;    
+    border-radius:               0.5em;    
     background-color:            @on-primary;
     text-color:                  @on-surface;
 }
 
-// Inputs //
 inputbar {
     enabled:                     true;
     margin: 1em;
     children:                    [ "textbox-prompt-colon", "entry" ];
-    border-radius:               2em;
+    border-radius:               0.5em;
     background-color:            @surface;
 }
 
@@ -123,7 +116,6 @@ entry {
     placeholder-color:           inherit;
 }
 
-// Lists //
 listbox {
     padding:                     0em;
     spacing:                     0em;
@@ -150,8 +142,6 @@ listview {
     text-color:                  @on-surface;
 }
 
-
-// Elements //
 element {
     enabled:                     true;
     spacing:                     10px;
@@ -164,7 +154,7 @@ element {
 element selected.normal {
     background-color:            @primary;
     text-color:                  @surface;
-    border-radius:               0.25em;
+    border-radius:               0.5em;
 }
 
 element normal.normal {
@@ -223,7 +213,6 @@ element-text {
     text-color:                  inherit;
 }
 
-// Error message //
 error-message {
     text-color:                  @on-surface;
     background-color:            @background;
