@@ -11,7 +11,7 @@
 */
 
 /* -----------------------------------------------------
- * Import Pywal colors
+ * Import Matugen colors
  * ----------------------------------------------------- */
 @import 'colors.css';
 
@@ -27,7 +27,7 @@
 }
 
 window {
-	background-color: alpha(@background, 0.5);
+	background-color: alpha(@background, 0.8);
 }
 
 button {
@@ -48,14 +48,11 @@ button {
 button:focus {
 	background-color: @primary;
     background-size: 25%;
-	border: 0px;
 }
 
 button:hover {
     background-color: @primary;
     background-size: 30%;
-    margin: 30px;
-    border-radius: 0px;
 }
 
 /*
