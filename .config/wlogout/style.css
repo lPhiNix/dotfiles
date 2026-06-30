@@ -1,0 +1,95 @@
+/*
+ * __        ___                         _     ____  _         _      
+ * \ \      / / | ___   __ _  ___  _   _| |_  / ___|| |_ _   _| | ___ 
+ *  \ \ /\ / /| |/ _ \ / _` |/ _ \| | | | __| \___ \| __| | | | |/ _ \
+ *   \ V  V / | | (_) | (_| | (_) | |_| | |_   ___) | |_| |_| | |  __/
+ *    \_/\_/  |_|\___/ \__, |\___/ \__,_|\__| |____/ \__|\__, |_|\___|
+ *                     |___/                             |___/        
+ * -----------------------------------------------------
+ * Wlogout CSS Styling
+ * by lPhiNix
+*/
+
+/* -----------------------------------------------------
+ * Import Pywal colors
+ * ----------------------------------------------------- */
+@import 'colors.css';
+
+/* -----------------------------------------------------
+ * General
+ * ----------------------------------------------------- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", "Noto Color Emoji", monospace;
+	background-image: none;
+	transition: 20ms;
+	box-shadow: none;
+}
+
+window {
+	background-color: alpha(@background, 0.5);
+}
+
+button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 20%;
+	animation: gradient_f 20s ease-in infinite;
+	border-radius: 0px;
+	border: 2px solid @primary;
+	transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+	color: @foreground;
+	background-color: @background;
+	margin: 10px; 
+    min-width: 150px;
+    min-height: 150px;	
+}
+
+button:focus {
+	background-color: @primary;
+    background-size: 25%;
+	border: 0px;
+}
+
+button:hover {
+    background-color: @primary;
+    background-size: 30%;
+    margin: 30px;
+    border-radius: 0px;
+}
+
+/*
+-----------------------------------------------------
+Buttons
+-----------------------------------------------------
+*/
+
+#lock {
+	margin: 10px;
+	background-image: image(url("icons/lock.svg"));
+}
+
+#logout {
+	margin: 10px;
+	background-image: image(url("icons/logout.svg"));
+}
+
+#suspend {
+	margin: 10px;
+	background-image: image(url("icons/suspend.svg"));
+}
+
+#hibernate {
+	margin: 10px;
+	background-image: image(url("icons/hibernate.svg"));
+}
+
+#shutdown {
+	margin: 10px;
+	background-image: image(url("icons/shutdown.svg"));
+}
+
+#reboot {
+	margin: 10px;
+	background-image: image(url("icons/reboot.svg"));
+}
