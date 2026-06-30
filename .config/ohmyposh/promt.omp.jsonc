@@ -12,7 +12,7 @@
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
     "transient_prompt": {
       "template": "  ❯❯ {{ .AbsolutePWD }} : ",
-      "foreground": "#e3c0a6",
+      "foreground": "#bbcbb1",
       "background": "transparent",
       "newline": true
     },
@@ -26,7 +26,7 @@
               "cache_duration": "none"
             },
             "template": "\n\u256d\u2500",
-            "foreground": "#e3c0a6",
+            "foreground": "#bbcbb1",
             "type": "text",
             "style": "plain"
           },
@@ -36,8 +36,8 @@
             },
             "leading_diamond": "\ue0b6",
             "template": "{{ .UserName }}",
-            "foreground": "#efe0d6",
-            "background": "#2e1500",
+            "foreground": "#e1e4da",
+            "background": "#022100",
             "type": "session",
             "style": "diamond"
           },
@@ -48,7 +48,7 @@
             "template": "\udb85\udc0b",
             "foreground": "#ff5555",
             "powerline_symbol": "\ue0b0",
-            "background": "#2e1500",
+            "background": "#022100",
             "type": "root",
             "style": "powerline"
           },
@@ -57,9 +57,9 @@
               "cache_duration": "none"
             },
             "template": "{{ .Icon }}  ",
-            "foreground": "#efe0d6",
+            "foreground": "#e1e4da",
             "powerline_symbol": "\ue0b0",
-            "background": "#2e1500",
+            "background": "#022100",
             "type": "os",
             "style": "powerline"
           },
@@ -70,8 +70,8 @@
             },
             "trailing_diamond": "\ue0b4",
             "template": " \udb80\ude56 {{ path .Path .Location }}",
-            "foreground": "#19120c",
-            "background": "#e3c0a6",
+            "foreground": "#11140f",
+            "background": "#bbcbb1",
             "type": "path",
             "style": "diamond"
           }
@@ -102,7 +102,7 @@
             "leading_diamond": "\ue0b6",
             "trailing_diamond": "\ue0b4",
             "template": "\ue718 {{ .Full }}",
-            "foreground": "#19120c",
+            "foreground": "#11140f",
             "background": "#50fa7b",
             "type": "node",
             "style": "diamond"
@@ -117,7 +117,7 @@
             "leading_diamond": "\ue0b6",
             "trailing_diamond": "\ue0b4",
             "template": "\ue71e {{ .Full }}",
-            "foreground": "#19120c",
+            "foreground": "#11140f",
             "background": "#ff5555",
             "type": "npm",
             "style": "diamond"
@@ -132,7 +132,7 @@
             "leading_diamond": "\ue0b6",
             "trailing_diamond": "\ue0b4",
             "template": "\udb80\udec1 {{ .Full }}",
-            "foreground": "#19120c",
+            "foreground": "#11140f",
             "background": "#ffb86c",
             "type": "pnpm",
             "style": "diamond"
@@ -144,7 +144,7 @@
             "leading_diamond": "\ue0b6",
             "trailing_diamond": "\ue0b4",
             "template": "\ue73c {{ .Full }}",
-            "foreground": "#19120c",
+            "foreground": "#11140f",
             "background": "#50fa7b",
             "type": "python",
             "style": "diamond"
@@ -153,7 +153,7 @@
             "leading_diamond": "\ue0b6",
             "trailing_diamond": "\ue0b4",
             "template": "\ue738 {{ .Full }}",
-            "foreground": "#19120c",
+            "foreground": "#11140f",
             "background": "#ff79c6",
             "type": "java",
             "style": "diamond"
@@ -162,7 +162,7 @@
             "leading_diamond": "\ue0b6",
             "trailing_diamond": "\ue0b4",
             "template": "\ue73d {{ .Full }}",
-            "foreground": "#efe0d6",
+            "foreground": "#e1e4da",
             "background": "#6272a4",
             "type": "php",
             "style": "diamond"
@@ -179,7 +179,7 @@
               "cache_duration": "none"
             },
             "template": "\u2570\u2500 ❯❯",
-            "foreground": "#e3c0a6",
+            "foreground": "#bbcbb1",
             "type": "text",
             "style": "diamond"
           }
