@@ -1,4 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env bash
+#                                 __        __ 
+#   ___ ___________ ___ ___  ___ / /  ___  / /_
+#  (_-</ __/ __/ -_) -_) _ \(_-</ _ \/ _ \/ __/
+# /___/\__/_/  \__/\__/_//_/___/_//_/\___/\__/ 
+#
+# Script to capture the entire screen or just a portion, 
+# which is saved to disk and copied to the clipboard 
 
 # Save directory in HHD
 SAVE_DIR=~/Pictures/screenshots
