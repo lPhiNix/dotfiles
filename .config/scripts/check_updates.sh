@@ -1,0 +1,88 @@
+#!/usr/bin/env bash
+#       __           __                  __     __        
+#  ____/ /  ___ ____/ /__  __ _____  ___/ /__ _/ /____ ___
+# / __/ _ \/ -_) __/  '_/ / // / _ \/ _  / _ `/ __/ -_|_-<
+# \__/_//_/\__/\__/_/\_\  \_,_/ .__/\_,_/\_,_/\__/\__/___/
+#                            /_/                                                         
+# Script to check for updates and output the number 
+# of updates in JSON format for Waybar's custom-updates module.
+
+# Check if command exists
+_checkCommandExists() {
+    cmd="$1"
+    if ! command -v "$cmd" >/dev/null; then
+        echo 1
+        return
+    fi
+    echo 0
+    return
+}
+
+script_name=$(basename "$0")
+
+# Count the instances
+instance_count=$(ps aux | grep -F "$script_name" | grep -v grep | grep -v $$ | wc -l)
+
+if [ $instance_count -gt 1 ]; then
+    sleep $instance_count
+fi
+
+
+# ----------------------------------------------------- 
+# Define threshholds for color indicators
+# ----------------------------------------------------- 
+
+threshhold_green=0
+threshhold_yellow=25
+threshhold_red=100
+
+# ----------------------------------------------------- 
+# Check for updates
+# ----------------------------------------------------- 
+
+# Arch
+if [[ $(_checkCommandExists "pacman") == 0 ]]; then
+
+    check_lock_files() {
+        local pacman_lock="/var/lib/pacman/db.lck"
+        local checkup_lock="${TMPDIR:-/tmp}/checkup-db-${UID}/db.lck"
+
+        while [ -f "$pacman_lock" ] || [ -f "$checkup_lock" ]; do
+            sleep 1
+        done
+    }
+
+    check_lock_files
+
+    updates_aur=$(yay -Qum | wc -l)
+    updates_pacman=$(checkupdates | wc -l)
+    updates=$((updates_aur+updates_pacman))
+    
+# Fedora
+elif [[ $(_checkCommandExists "dnf") == 0 ]]; then
+    updates=$(dnf check-update -q | grep -c ^[a-z0-9])
+# Others
+else
+    updates=0
+fi
+
+# ----------------------------------------------------- 
+# Output in JSON format for Waybar Module custom-updates
+# ----------------------------------------------------- 
+
+css_class="green"
+
+if [ "$updates" -gt $threshhold_yellow ]; then
+    css_class="yellow"
+fi
+
+if [ "$updates" -gt $threshhold_red ]; then
+    css_class="red"
+fi
+if [ "$updates" != 0 ]; then
+    if [ "$updates" -gt $threshhold_green ]; then
+        printf '{"text": "%s", "alt": "%s", "tooltip": "Click to update your system", "class": "%s"}' "$updates" "$updates" "$css_class"
+    else
+        printf '{"text": "0", "alt": "0", "tooltip": "No updates available", "class": "green"}'
+    fi
+fi
