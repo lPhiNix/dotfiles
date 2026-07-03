@@ -42,6 +42,7 @@
         "on-click": "nautilus",
         "tooltip": false
     },
+
     "group/quickapps": {
         "orientation": "horizontal",
         "modules": [
@@ -50,6 +51,7 @@
             "custom/files"
         ]
     },
+
     "custom/updates": {
         "format": "  {}",    
         "escape": true,    
@@ -61,19 +63,34 @@
         "tooltip": false
     },
 
-    "pulseaudio#headset": {
-        "format": "󰋋  {volume}%",
-        "format-muted": "󰋋  muted",
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "  {volume}%",
         "on-click": "pavucontrol",
-        "tooltip": false
+        "tooltip": false,
+        "format-icons": {
+            "headphone": "󰋋",
+            "headset": "󰋋",
+            "default": [" ", " ", " "]
+        }
     },
 
     "network": {
-        "format-wifi": "󰖩  {essid}",
+        "format": "{ifname}",
+        "format-wifi": "󰖩  {essid} ({signalStrength}%)",
         "format-ethernet": "󰈀  {ifname}",
         "format-disconnected": "󰖪  Disconnected",
         "on-click": "kitty --class floating-terminal -e nmtui",
         "tooltip": false
+    },
+
+    "bluetooth": {
+        "format": "󰂯",
+        "format-disabled": "󰂲",
+        "format-off": "󰂲",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
     },
 
     "group/system": {
@@ -123,10 +140,30 @@
         "tooltip": false
     },
 
+      "group/tools": {
+        "orientation": "horizontal",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "system-child",
+            "transition-left-to-right": false
+        },
+        "modules": [
+            "custom/tools",
+            "custom/cliphist"
+        ]
+    },
+
     "custom/tools": {
         "format": "",
         "tooltip": false
     },
+
+    "custom/cliphist": {
+        "format": "",
+        "on-click": "",
+        "tooltip": false
+    },
+
     "wlr/taskbar": {
         "format": "{icon}",
         "icon-size": 18,
@@ -135,21 +172,24 @@
         "on-click-middle": "close",
         "ignore-list": ["kitty"]
     },
+
     "custom/notification": {
-        "format": "",
+        "format": "",
         "tooltip": false
     },
 
     "custom/exit": {
-        "format": "",
+        "format": "⏻",
         "on-click": "wlogout",
         "tooltip": false
     },
+    
     "group/quickactions": {
         "orientation": "horizontal",
         "modules": [
+            "bluetooth",
             "group/system",
-            "custom/tools",
+            "group/tools",
             "custom/notification",
             "custom/exit"
         ]

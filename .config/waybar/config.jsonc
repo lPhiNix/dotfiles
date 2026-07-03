@@ -24,6 +24,7 @@
   "modules-left": [
     "custom/launcher",
     "hyprland/workspaces",
+    "wlr/taskbar",
     "group/quickapps"
   ],
 
@@ -33,7 +34,7 @@
 
   "modules-right": [
     "custom/updates",
-    "pulseaudio#headset",
+    "pulseaudio",
     "network",
     "group/quickactions",
     "clock"

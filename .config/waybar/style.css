@@ -128,7 +128,7 @@ button:focus {
  * -----------------------------------------------------
  * Transparent background and reset margin/padding for these modules.
  */
-#quickapps, #quickactions, #system {
+#quickapps, #quickactions, #system, #tools {
     background: transparent;
     margin: 0;
     padding: 0;
@@ -140,20 +140,48 @@ button:focus {
  * -----------------------------------------------------
  * Styles for CPU, memory, GPU, disk, and other custom modules.
  */
-#cpu, #memory, #custom-gpu, #disk,
-#custom-system, 
-#custom-tools, 
+#custom-terminal, 
+#custom-browser, 
+#custom-files,
+#bluetooth,
+#custom-system,
+#cpu, 
+#memory, 
+#custom-gpu, 
+#disk, 
+#custom-tools,
+#custom-cliphist, 
 #custom-notification,
-#custom-exit, 
+#custom-exit {
+    font-size: 1.25em;
+    padding-left: 0.75em;
+    padding-right: 0.75em;
+}
+
+#custom-system,
+#custom-tools {
+    padding-left: 0.50em;
+}
+
+#bluetooth {
+    padding-left: 0.30em;
+    padding-right: 0.50em;
+}
+
+#bluetooth,
+#custom-system {
+    font-size: 1.55em;
+}
+
 #custom-terminal, 
 #custom-browser, 
 #custom-files {
-    font-size: 1.25em;
-    padding: 0 0.625em;
+    padding-left: 0.50em;
+    padding-right: 0.50em;
 }
-#custom-system {
-    font-size: 1.55em;
-    padding: 0 0.5em;
+
+#custom-terminal {
+    padding-left: 0.20em;
 }
 
 /*
