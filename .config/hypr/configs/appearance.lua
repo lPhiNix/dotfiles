@@ -14,7 +14,7 @@ hl.config({
 
         col = {
             active_border   = primary,
-            inactive_border = outline_variant,
+            inactive_border = tertiary_container,
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
