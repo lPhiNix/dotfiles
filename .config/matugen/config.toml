@@ -11,11 +11,6 @@
 [config]
 fallback_color = "#000000"
 
-[config.wallpaper]
-command = "awww"
-arguments = ["img", "--transition-type", "wipe", "--transition-fps", "60"]
-set = true
-
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland-palette.lua'
 output_path = '~/.config/hypr/colors.lua'
