@@ -54,6 +54,8 @@ mainbox {
 
 imagebox {
     padding:                     20px;
+    background-image:            url("~/.config/hypr/wallpaper", height);
+    background-position:         center;
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
