@@ -52,3 +52,11 @@ hl.window_rule({
     float = true,
     size  = "800 600",
 })
+
+hl.window_rule({
+    name  = "wallpaper-preview",
+    match = { class = "wallpaper-preview" },
+    float = true,
+    size  = "900 600",
+    center = true,
+})

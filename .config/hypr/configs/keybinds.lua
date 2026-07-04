@@ -47,6 +47,9 @@ hl.bind(mainMod .. " + mouse_up",   hl.dsp.focus({ workspace = "e-1" }))
 hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("/home/phinix/.config/hypr/scripts/screenshot.sh full"))
 hl.bind(mainMod .. " + + SHIFT + F", hl.dsp.exec_cmd("/home/phinix/.config/hypr/scripts/screenshot.sh area"))
 
+-- Wallpaper selector (Rofi + matugen)
+hl.bind(mainMod .. " + + SHIFT + R", hl.dsp.exec_cmd("$HOME/.config/scripts/select_wallpaper.sh"))
+
 -- Move/resize windows with mainMod + LMB/RMB and dragging
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(),   { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
