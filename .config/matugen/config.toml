@@ -13,7 +13,7 @@ fallback_color = "#000000"
 
 [config.wallpaper]
 command = "awww"
-arguments = ["img", "--transition-type", "any", "--transition-fps", "60"]
+arguments = ["img", "--transition-type", "wipe", "--transition-fps", "60"]
 set = true
 
 [templates.hyprland]
