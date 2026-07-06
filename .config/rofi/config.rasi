@@ -55,10 +55,17 @@ mainbox {
 imagebox {
     padding:                     20px;
     background-image:            url("~/.config/hypr/wallpaper", height);
-    background-position:         center;
     background-color:            transparent;
     orientation:                 vertical;
     children:                    [ "inputbar", "dummy", "mode-switcher" ];
+}
+
+listbox {
+    padding:                     0em;
+    spacing:                     0em;
+    orientation:                 horizontal;
+    children:                    [ "listview" ];
+    background-color:            @background;
 }
 
 dummy {
@@ -74,34 +81,18 @@ mode-switcher {
     background-color:            transparent;
 }
 
-button {
-    padding:                     15px;
-    border-radius:               0.5em;
-    border:                      0;    
-    cursor:                      pointer;
-    background-color:            @inverse-primary;
-    text-color:                  @on-surface;
-}
-
-button selected {
-    padding:                     15px;
-    border-radius:               0.5em;    
-    background-color:            @on-primary;
-    text-color:                  @on-surface;
-}
-
 inputbar {
     enabled:                     true;
     margin: 1em;
     children:                    [ "textbox-prompt-colon", "entry" ];
     border-radius:               0.5em;
-    background-color:            @surface;
+    background-color:            @background;
 }
 
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    str:                         "  ";
+    str:                         "   ";
     padding:                     1em 0.3em 0 0;
     text-color:                  @on-surface;
     background-color:            transparent;
@@ -118,12 +109,20 @@ entry {
     placeholder-color:           inherit;
 }
 
-listbox {
-    padding:                     0em;
-    spacing:                     0em;
-    orientation:                 horizontal;
-    children:                    [ "listview" ];
+button {
+    padding:                     15px;
+    border-radius:               0.5em;
+    border:                      0;    
+    cursor:                      pointer;
     background-color:            @background;
+    text-color:                  @primary;
+}
+
+button selected {
+    padding:                     15px;
+    border-radius:               0.5em;    
+    background-color:            @primary;
+    text-color:                  @background;
 }
 
 listview {
