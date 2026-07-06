@@ -12,11 +12,13 @@ ROFI_CONFIG="$HOME/.config/rofi/config.rasi"
 CURRENT_WALLPAPER_FILE="$HOME/.config/hypr/wallpaper.sh"
 
 SELECTED_WALLPAPER=$(
-    find "$WALLPAPER_DIR" -maxdepth 1 -type f \
-        \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) \
-        | sed "s|$WALLPAPER_DIR/||" \
-        | sort \
-        | rofi -dmenu -config "$ROFI_CONFIG"
+find "$WALLPAPER_DIR" -maxdepth 1 -type f \
+    \( -iname "*.jpg" -o -iname "*.jpeg" -o -iname "*.png" -o -iname "*.webp" \) |
+sort |
+while read -r img; do
+    name=$(basename "$img")
+    printf "%s\0icon\x1f%s\n" "$name" "$img"
+done | rofi -dmenu -show-icons -config "$ROFI_CONFIG"
 )
 
 # Exit if the user cancels the selection.
