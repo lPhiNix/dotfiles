@@ -1,0 +1,150 @@
+{
+    "record": {
+        "extraArgs": []
+    },
+    "resizer": {
+        "rules": [
+            {
+                "name": "(Bitwarden",
+                "matchType": "titleContains",
+                "width": "20%",
+                "height": "54%",
+                "actions": [
+                    "float",
+                    "center"
+                ]
+            },
+            {
+                "name": "^[Pp]icture(-| )in(-| )[Pp]icture$",
+                "matchType": "titleRegex",
+                "width": "",
+                "height": "",
+                "actions": [
+                    "pip"
+                ]
+            }
+        ]
+    },
+    "wallpaper": {
+        "postHook": ""
+    },
+    "theme": {
+        "enableTerm": true,
+        "enableHypr": true,
+        "enableDiscord": true,
+        "enableSpicetify": true,
+        "enablePandora": true,
+        "enableFuzzel": true,
+        "enableBtop": true,
+        "enableNvtop": true,
+        "enableHtop": true,
+        "enableGtk": true,
+        "enableQt": true,
+        "enableWarp": true,
+        "enableChromium": true,
+        "enableZed": true,
+        "enableCava": true,
+        "iconTheme": "Papirus-Dark",
+        "iconThemeLight": "Papirus-Light",
+        "iconThemeDark": "Papirus-Dark",
+        "postHook": ""
+    },
+    "toggles": {
+        "communication": {
+            "discord": {
+                "enable": true,
+                "match": [
+                    {
+                        "class": "discord"
+                    }
+                ],
+                "command": [
+                    "discord"
+                ],
+                "move": true
+            },
+            "whatsapp": {
+                "enable": true,
+                "match": [
+                    {
+                        "class": "whatsapp"
+                    }
+                ],
+                "move": true
+            }
+        },
+        "music": {
+            "spotify": {
+                "enable": true,
+                "match": [
+                    {
+                        "class": "Spotify"
+                    },
+                    {
+                        "initialTitle": "Spotify"
+                    },
+                    {
+                        "initialTitle": "Spotify Free"
+                    }
+                ],
+                "command": [
+                    "spicetify",
+                    "watch",
+                    "-s"
+                ],
+                "move": true
+            },
+            "feishin": {
+                "enable": true,
+                "match": [
+                    {
+                        "class": "feishin"
+                    }
+                ],
+                "move": true
+            }
+        },
+        "sysmon": {
+            "btop": {
+                "enable": true,
+                "match": [
+                    {
+                        "class": "btop",
+                        "title": "btop",
+                        "workspace": {
+                            "name": "special:sysmon"
+                        }
+                    }
+                ],
+                "command": [
+                    "kitty",
+                    "--class",
+                    "btop",
+                    "--title",
+                    "btop",
+                    "fish",
+                    "-C",
+                    "exec btop"
+                ]
+            }
+        },
+        "todo": {
+            "todoist": {
+                "enable": true,
+                "match": [
+                    {
+                        "class": "Todoist"
+                    }
+                ],
+                "command": [
+                    "todoist"
+                ],
+                "move": true
+            }
+        }
+    },
+    "dots": {
+        "url": "https://github.com/caelestia-dots/caelestia.git",
+        "branch": "main"
+    }
+}
