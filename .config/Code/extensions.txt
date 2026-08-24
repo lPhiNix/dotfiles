@@ -1,0 +1,2 @@
+miguelsolorio.fluent-icons
+soramanew.caelestia-vscode-integration
