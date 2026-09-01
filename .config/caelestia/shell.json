@@ -679,7 +679,7 @@
         "audioIncrement": 0.1,
         "brightnessIncrement": 0.1,
         "defaultPlayer": "Brave",
-        "gpuType": "GENERIC",
+        "gpuType": "NVIDIA",
         "lyricsBackend": "Auto",
         "maxVolume": 1,
         "playerAliases": [
