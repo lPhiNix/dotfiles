@@ -49,4 +49,5 @@
     "workbench.productIconTheme": "fluent-icons",
     "workbench.iconTheme": "symbols",
     "terminal.integrated.defaultProfile.linux": "fish",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
 }
