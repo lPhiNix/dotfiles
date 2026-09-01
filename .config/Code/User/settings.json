@@ -17,29 +17,28 @@
     "javascript.preferences.importModuleSpecifierEnding": "minimal",
     "typescript.preferences.importModuleSpecifierEnding": "minimal",
     "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit"
+        "source.organizeImports": "explicit",
     },
     "codeium.enableCodeLens": false,
     "typescript.preferences.preferTypeOnlyAutoImports": true,
     "editor.suggestSelection": "recentlyUsedByPrefix",
-    "workbench.iconTheme": "catppuccin-mocha",
     "git.enableSmartCommit": true,
     "codeium.enableConfig": {
         "*": true,
         "fish": true,
-        "qml": true
+        "qml": true,
     },
     "[c]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     },
     "[cpp]": {
-        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     },
     "doxdocgen.generic.boolReturnsTrueFalse": false,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
     "qt-qml.qmlls.additionalImportPaths": ["/usr/lib/qt6/qml"],
     "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff"
+        "editor.defaultFormatter": "charliermarsh.ruff",
     },
     "ruff.lineLength": 120,
     "python.languageServer": "Pylance",
@@ -47,5 +46,7 @@
     "qt-qml.qmlls.customExePath": "/usr/bin/qmlls6",
     "qt-qml.doNotAskForQmllsDownload": true,
     "workbench.colorTheme": "Caelestia",
-    "workbench.productIconTheme": "fluent-icons"
+    "workbench.productIconTheme": "fluent-icons",
+    "workbench.iconTheme": "symbols",
+    "terminal.integrated.defaultProfile.linux": "fish",
 }
