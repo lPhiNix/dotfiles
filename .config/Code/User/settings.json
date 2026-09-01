@@ -50,4 +50,13 @@
     "workbench.iconTheme": "symbols",
     "terminal.integrated.defaultProfile.linux": "fish",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
+    "editor.fontFamily": "JetBrainsMono Nerd Font Mono, monospace",
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "scope": ["comment", "punctuation.definition.comment"],
+                "settings": { "fontStyle": "" },
+            },
+        ],
+    },
 }
