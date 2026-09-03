@@ -1,7 +1,7 @@
 return {
   terminal = "kitty",
   browser = "brave",
-  editor = "vscode",
+  editor = "code",
   fileExplorer = "nautilus",
 
   kbCloseWindow = "SUPER + BackSpace",
