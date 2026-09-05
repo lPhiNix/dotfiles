@@ -59,4 +59,7 @@
             },
         ],
     },
+    "files.exclude": {
+        "**/.git": false,
+    },
 }
