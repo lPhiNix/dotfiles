@@ -62,4 +62,5 @@
     "files.exclude": {
         "**/.git": false,
     },
+    "jdk.telemetry.enabled": false,
 }
