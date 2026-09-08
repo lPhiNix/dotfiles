@@ -30,6 +30,7 @@ abbr ... 'cd ../..'
 abbr .... 'cd ../../..'
 
 abbr g 'git'
+abbr gc 'git commit -m'
 abbr gr 'git rebase'
 abbr grc 'git rebase --continue'
 abbr gcp 'git cherry-pick'
