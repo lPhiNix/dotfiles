@@ -323,7 +323,7 @@
             "activeIndicator": true,
             "activeLabel": "󰮯",
             "activeTrail": false,
-            "capitalisation": "preserve",
+            "capitalisation": "Preserve",
             "label": "  ",
             "maxWindowIcons": 5,
             "occupiedBg": false,
@@ -657,7 +657,7 @@
         "defaultExpireTimeout": 5000,
         "expandThreshold": 20,
         "expire": true,
-        "fullscreen": "on",
+        "fullscreen": "On",
         "fullscreenExpireTimeout": 2000,
         "groupPreviewNum": 3,
         "openExpanded": false
@@ -680,7 +680,7 @@
         "audioIncrement": 0.1,
         "brightnessIncrement": 0.1,
         "defaultPlayer": "Brave",
-        "gpuType": "NVIDIA",
+        "gpuType": "Nvidia",
         "lyricsBackend": "Auto",
         "maxVolume": 1,
         "playerAliases": [
@@ -780,11 +780,12 @@
             "provider": [
                 {
                     "displayName": "Wireguard (Your VPN)",
-                    "enabled": false,
+                    "id": "vpn-mtvalsjv-5092s",
                     "interface": "your-connection-name",
                     "name": "wireguard"
                 }
-            ]
+            ],
+            "selectedProvider": "vpn-mtvalsjv-5092s"
         }
     }
 }
