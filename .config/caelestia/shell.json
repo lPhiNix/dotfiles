@@ -66,30 +66,26 @@
                 "extraLarge": {
                     "italic": false,
                     "size": 36,
-                    "vaxes": {
-                    },
+                    "vaxes": {},
                     "weight": 400
                 },
                 "family": "Material Symbols Rounded",
                 "large": {
                     "italic": false,
                     "size": 24,
-                    "vaxes": {
-                    },
+                    "vaxes": {},
                     "weight": 400
                 },
                 "medium": {
                     "italic": false,
                     "size": 18,
-                    "vaxes": {
-                    },
+                    "vaxes": {},
                     "weight": 400
                 },
                 "small": {
                     "italic": false,
                     "size": 15,
-                    "vaxes": {
-                    },
+                    "vaxes": {},
                     "weight": 400
                 }
             },
@@ -125,22 +121,19 @@
                 "large": {
                     "italic": false,
                     "size": 16,
-                    "vaxes": {
-                    },
+                    "vaxes": {},
                     "weight": 400
                 },
                 "medium": {
                     "italic": false,
                     "size": 14,
-                    "vaxes": {
-                    },
+                    "vaxes": {},
                     "weight": 400
                 },
                 "small": {
                     "italic": false,
                     "size": 12,
-                    "vaxes": {
-                    },
+                    "vaxes": {},
                     "weight": 400
                 }
             },
@@ -266,8 +259,7 @@
                 "id": "power"
             }
         ],
-        "excludedScreens": [
-        ],
+        "excludedScreens": [],
         "persistent": true,
         "popouts": {
             "activeWindow": true,
@@ -313,10 +305,8 @@
         "tray": {
             "background": false,
             "compact": false,
-            "hiddenIcons": [
-            ],
-            "iconSubs": [
-            ],
+            "hiddenIcons": [],
+            "iconSubs": [],
             "recolour": false
         },
         "workspaces": {
@@ -401,19 +391,10 @@
     "enabled": true,
     "general": {
         "apps": {
-            "audio": [
-                "pwvucontrol"
-            ],
-            "explorer": [
-                "nautilus",
-                "--new-window"
-            ],
-            "playback": [
-                "mpv"
-            ],
-            "terminal": [
-                "kitty"
-            ]
+            "audio": ["pwvucontrol"],
+            "explorer": ["nautilus", "--new-window"],
+            "playback": ["mpv"],
+            "terminal": ["kitty"]
         },
         "battery": {
             "criticalLevel": 3,
@@ -458,9 +439,7 @@
                 },
                 {
                     "enabled": false,
-                    "idleAction": [
-                        "suspendThenHibernate"
-                    ],
+                    "idleAction": ["suspendThenHibernate"],
                     "timeout": 600
                 }
             ]
@@ -471,13 +450,10 @@
         "showOverFullscreen": false
     },
     "launcher": {
-        "actionPrefix": ">",
+        "actionPrefix": "/",
         "actions": [
             {
-                "command": [
-                    "autocomplete",
-                    "calc"
-                ],
+                "command": ["autocomplete", "calc"],
                 "dangerous": false,
                 "description": "Do simple math equations (powered by Qalc)",
                 "enabled": true,
@@ -485,10 +461,7 @@
                 "name": "Calculator"
             },
             {
-                "command": [
-                    "autocomplete",
-                    "scheme"
-                ],
+                "command": ["autocomplete", "scheme"],
                 "dangerous": false,
                 "description": "Change the current colour scheme",
                 "enabled": true,
@@ -496,10 +469,7 @@
                 "name": "Scheme"
             },
             {
-                "command": [
-                    "autocomplete",
-                    "wallpaper"
-                ],
+                "command": ["autocomplete", "wallpaper"],
                 "dangerous": false,
                 "description": "Change the current wallpaper",
                 "enabled": true,
@@ -507,10 +477,7 @@
                 "name": "Wallpaper"
             },
             {
-                "command": [
-                    "autocomplete",
-                    "variant"
-                ],
+                "command": ["autocomplete", "variant"],
                 "dangerous": false,
                 "description": "Change the current scheme variant",
                 "enabled": true,
@@ -518,11 +485,7 @@
                 "name": "Variant"
             },
             {
-                "command": [
-                    "caelestia",
-                    "wallpaper",
-                    "-r"
-                ],
+                "command": ["caelestia", "wallpaper", "-r"],
                 "dangerous": false,
                 "description": "Switch to a random wallpaper",
                 "enabled": true,
@@ -530,10 +493,7 @@
                 "name": "Random"
             },
             {
-                "command": [
-                    "setMode",
-                    "light"
-                ],
+                "command": ["setMode", "light"],
                 "dangerous": false,
                 "description": "Change the scheme to light mode",
                 "enabled": true,
@@ -541,10 +501,7 @@
                 "name": "Light"
             },
             {
-                "command": [
-                    "setMode",
-                    "dark"
-                ],
+                "command": ["setMode", "dark"],
                 "dangerous": false,
                 "description": "Change the scheme to dark mode",
                 "enabled": true,
@@ -552,9 +509,7 @@
                 "name": "Dark"
             },
             {
-                "command": [
-                    "poweroff"
-                ],
+                "command": ["poweroff"],
                 "dangerous": true,
                 "description": "Shutdown the system",
                 "enabled": true,
@@ -562,9 +517,7 @@
                 "name": "Shutdown"
             },
             {
-                "command": [
-                    "reboot"
-                ],
+                "command": ["reboot"],
                 "dangerous": true,
                 "description": "Reboot the system",
                 "enabled": true,
@@ -572,9 +525,7 @@
                 "name": "Reboot"
             },
             {
-                "command": [
-                    "logout"
-                ],
+                "command": ["logout"],
                 "dangerous": true,
                 "description": "Log out of the current session",
                 "enabled": true,
@@ -582,10 +533,7 @@
                 "name": "Logout"
             },
             {
-                "command": [
-                    "loginctl",
-                    "lock-session"
-                ],
+                "command": ["loginctl", "lock-session"],
                 "dangerous": false,
                 "description": "Lock the current session",
                 "enabled": true,
@@ -593,9 +541,7 @@
                 "name": "Lock"
             },
             {
-                "command": [
-                    "suspendThenHibernate"
-                ],
+                "command": ["suspendThenHibernate"],
                 "dangerous": false,
                 "description": "Suspend then hibernate",
                 "enabled": true,
@@ -603,12 +549,7 @@
                 "name": "Sleep"
             },
             {
-                "command": [
-                    "caelestia",
-                    "shell",
-                    "nexus",
-                    "open"
-                ],
+                "command": ["caelestia", "shell", "nexus", "open"],
                 "dangerous": false,
                 "description": "Configure the shell",
                 "enabled": true,
@@ -619,10 +560,8 @@
         "dragThreshold": 50,
         "enableDangerousActions": true,
         "enabled": true,
-        "favouriteApps": [
-        ],
-        "hiddenApps": [
-        ],
+        "favouriteApps": [],
+        "hiddenApps": [],
         "maxShown": 7,
         "maxWallpapers": 9,
         "showOnHover": false,
@@ -698,18 +637,10 @@
     },
     "session": {
         "commands": {
-            "hibernate": [
-                "hibernate"
-            ],
-            "logout": [
-                "logout"
-            ],
-            "reboot": [
-                "reboot"
-            ],
-            "shutdown": [
-                "poweroff"
-            ]
+            "hibernate": ["hibernate"],
+            "logout": ["logout"],
+            "reboot": ["reboot"],
+            "shutdown": ["poweroff"]
         },
         "dragThreshold": 30,
         "enabled": true,

@@ -9,19 +9,14 @@
                 "matchType": "titleContains",
                 "width": "20%",
                 "height": "54%",
-                "actions": [
-                    "float",
-                    "center"
-                ]
+                "actions": ["float", "center"]
             },
             {
                 "name": "^[Pp]icture(-| )in(-| )[Pp]icture$",
                 "matchType": "titleRegex",
                 "width": "",
                 "height": "",
-                "actions": [
-                    "pip"
-                ]
+                "actions": ["pip"]
             }
         ]
     },
@@ -31,18 +26,18 @@
     "theme": {
         "enableTerm": true,
         "enableHypr": true,
-        "enableDiscord": true,
-        "enableSpicetify": true,
-        "enablePandora": true,
+        "enableDiscord": false,
+        "enableSpicetify": false,
+        "enablePandora": false,
         "enableFuzzel": true,
         "enableBtop": true,
         "enableNvtop": true,
-        "enableHtop": true,
+        "enableHtop": false,
         "enableGtk": true,
         "enableQt": true,
-        "enableWarp": true,
-        "enableChromium": true,
-        "enableZed": true,
+        "enableWarp": false,
+        "enableChromium": false,
+        "enableZed": false,
         "enableCava": true,
         "iconTheme": "Papirus-Dark",
         "iconThemeLight": "Papirus-Light",
@@ -58,9 +53,7 @@
                         "class": "discord"
                     }
                 ],
-                "command": [
-                    "discord"
-                ],
+                "command": ["discord"],
                 "move": true
             },
             "whatsapp": {
@@ -87,11 +80,7 @@
                         "initialTitle": "Spotify Free"
                     }
                 ],
-                "command": [
-                    "spicetify",
-                    "watch",
-                    "-s"
-                ],
+                "command": ["spicetify", "watch", "-s"],
                 "move": true
             },
             "feishin": {
@@ -116,16 +105,7 @@
                         }
                     }
                 ],
-                "command": [
-                    "kitty",
-                    "--class",
-                    "btop",
-                    "--title",
-                    "btop",
-                    "fish",
-                    "-C",
-                    "exec btop"
-                ]
+                "command": ["kitty", "--class", "btop", "--title", "btop", "fish", "-C", "exec btop"]
             }
         },
         "todo": {
@@ -136,9 +116,7 @@
                         "class": "Todoist"
                     }
                 ],
-                "command": [
-                    "todoist"
-                ],
+                "command": ["todoist"],
                 "move": true
             }
         }
