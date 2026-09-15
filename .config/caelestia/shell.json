@@ -184,94 +184,18 @@
     },
     "background": {
         "desktopClock": {
-            "background": {
-                "blur": true,
-                "enabled": false,
-                "opacity": 0.7
-            },
-            "enabled": true,
-            "invertColors": false,
-            "position": "bottom-right",
-            "scale": 1,
-            "shadow": {
-                "blur": 0.4,
-                "enabled": true,
-                "opacity": 0.7
-            }
+            "enabled": true
         },
-        "enabled": true,
         "visualiser": {
             "autoHide": false,
-            "blur": false,
-            "enabled": true,
-            "rounding": 1,
-            "spacing": 1
+            "enabled": true
         },
         "wallpaperEnabled": true
     },
     "bar": {
-        "activeWindow": {
-            "compact": false,
-            "inverted": false,
-            "showOnHover": true
-        },
         "clock": {
-            "background": false,
-            "showDate": true,
-            "showIcon": true
+            "showDate": true
         },
-        "dragThreshold": 20,
-        "entries": [
-            {
-                "enabled": true,
-                "id": "logo"
-            },
-            {
-                "enabled": true,
-                "id": "workspaces"
-            },
-            {
-                "enabled": true,
-                "id": "spacer"
-            },
-            {
-                "enabled": true,
-                "id": "activeWindow"
-            },
-            {
-                "enabled": true,
-                "id": "spacer"
-            },
-            {
-                "enabled": true,
-                "id": "tray"
-            },
-            {
-                "enabled": true,
-                "id": "clock"
-            },
-            {
-                "enabled": true,
-                "id": "statusIcons"
-            },
-            {
-                "enabled": true,
-                "id": "power"
-            }
-        ],
-        "excludedScreens": [],
-        "persistent": true,
-        "popouts": {
-            "activeWindow": true,
-            "statusIcons": true,
-            "tray": true
-        },
-        "scrollActions": {
-            "brightness": true,
-            "volume": true,
-            "workspaces": true
-        },
-        "showOnHover": true,
         "statusIcons": [
             {
                 "enabled": true,
@@ -302,25 +226,7 @@
                 "id": "battery"
             }
         ],
-        "tray": {
-            "background": false,
-            "compact": false,
-            "hiddenIcons": [],
-            "iconSubs": [],
-            "recolour": false
-        },
         "workspaces": {
-            "activeIndicator": true,
-            "activeLabel": "󰮯",
-            "activeTrail": false,
-            "capitalisation": "Preserve",
-            "label": "  ",
-            "maxWindowIcons": 5,
-            "occupiedBg": false,
-            "occupiedLabel": "󰮯",
-            "showWindows": true,
-            "showWindowsOnSpecialWorkspaces": true,
-            "shown": 5,
             "specialWorkspaceIcons": [
                 {
                     "icon": "monitoring",
@@ -364,358 +270,46 @@
         }
     },
     "border": {
-        "rounding": 15,
-        "smoothing": 20,
-        "thickness": 10
+        "rounding": 15
     },
-    "dashboard": {
-        "dragThreshold": 50,
-        "enabled": true,
-        "mediaUpdateInterval": 500,
-        "performance": {
-            "showBattery": true,
-            "showCpu": true,
-            "showGpu": true,
-            "showMemory": true,
-            "showNetwork": true,
-            "showStorage": true
-        },
-        "resourceUpdateInterval": 1000,
-        "showDashboard": true,
-        "showMedia": true,
-        "showOnHover": true,
-        "showPerformance": true,
-        "showWeather": true
-    },
-    "enabled": true,
     "general": {
         "apps": {
-            "audio": ["pwvucontrol"],
             "explorer": ["nautilus", "--new-window"],
-            "playback": ["mpv"],
             "terminal": ["kitty"]
         },
-        "battery": {
-            "criticalLevel": 3,
-            "warnLevels": [
-                {
-                    "icon": "battery_android_frame_2",
-                    "level": 20,
-                    "message": "You might want to plug in a charger",
-                    "title": "Low battery"
-                },
-                {
-                    "icon": "battery_android_frame_1",
-                    "level": 10,
-                    "message": "You should probably plug in a charger <b>now</b>",
-                    "title": "Did you see the previous message?"
-                },
-                {
-                    "critical": true,
-                    "icon": "battery_android_alert",
-                    "level": 5,
-                    "message": "PLUG THE CHARGER RIGHT NOW!!",
-                    "title": "Critical battery level"
-                }
-            ]
-        },
         "idle": {
-            "inhibitWhenAudio": true,
-            "inhibitWhenCharging": false,
-            "lockBeforeSleep": true,
             "timeouts": [
                 {
                     "idleAction": "lock",
-                    "inhibitWhenAudio": false,
+                    "inhibitWhenAudio": true,
                     "inhibitWhenCharging": false,
                     "respectInhibitors": true,
-                    "timeout": 180
+                    "timeout": 600
                 },
                 {
                     "idleAction": "dpms off",
                     "returnAction": "dpms on",
-                    "timeout": 300
+                    "timeout": 900
                 },
                 {
                     "enabled": false,
                     "idleAction": ["suspendThenHibernate"],
-                    "timeout": 600
+                    "timeout": 1800
                 }
             ]
-        },
-        "logo": "",
-        "mediaGifSpeedAdjustment": 300,
-        "sessionGifSpeed": 0.7,
-        "showOverFullscreen": false
+        }
     },
     "launcher": {
         "actionPrefix": "/",
-        "actions": [
-            {
-                "command": ["autocomplete", "calc"],
-                "dangerous": false,
-                "description": "Do simple math equations (powered by Qalc)",
-                "enabled": true,
-                "icon": "calculate",
-                "name": "Calculator"
-            },
-            {
-                "command": ["autocomplete", "scheme"],
-                "dangerous": false,
-                "description": "Change the current colour scheme",
-                "enabled": true,
-                "icon": "palette",
-                "name": "Scheme"
-            },
-            {
-                "command": ["autocomplete", "wallpaper"],
-                "dangerous": false,
-                "description": "Change the current wallpaper",
-                "enabled": true,
-                "icon": "image",
-                "name": "Wallpaper"
-            },
-            {
-                "command": ["autocomplete", "variant"],
-                "dangerous": false,
-                "description": "Change the current scheme variant",
-                "enabled": true,
-                "icon": "colors",
-                "name": "Variant"
-            },
-            {
-                "command": ["caelestia", "wallpaper", "-r"],
-                "dangerous": false,
-                "description": "Switch to a random wallpaper",
-                "enabled": true,
-                "icon": "casino",
-                "name": "Random"
-            },
-            {
-                "command": ["setMode", "light"],
-                "dangerous": false,
-                "description": "Change the scheme to light mode",
-                "enabled": true,
-                "icon": "light_mode",
-                "name": "Light"
-            },
-            {
-                "command": ["setMode", "dark"],
-                "dangerous": false,
-                "description": "Change the scheme to dark mode",
-                "enabled": true,
-                "icon": "dark_mode",
-                "name": "Dark"
-            },
-            {
-                "command": ["poweroff"],
-                "dangerous": true,
-                "description": "Shutdown the system",
-                "enabled": true,
-                "icon": "power_settings_new",
-                "name": "Shutdown"
-            },
-            {
-                "command": ["reboot"],
-                "dangerous": true,
-                "description": "Reboot the system",
-                "enabled": true,
-                "icon": "cached",
-                "name": "Reboot"
-            },
-            {
-                "command": ["logout"],
-                "dangerous": true,
-                "description": "Log out of the current session",
-                "enabled": true,
-                "icon": "exit_to_app",
-                "name": "Logout"
-            },
-            {
-                "command": ["loginctl", "lock-session"],
-                "dangerous": false,
-                "description": "Lock the current session",
-                "enabled": true,
-                "icon": "lock",
-                "name": "Lock"
-            },
-            {
-                "command": ["suspendThenHibernate"],
-                "dangerous": false,
-                "description": "Suspend then hibernate",
-                "enabled": true,
-                "icon": "bedtime",
-                "name": "Sleep"
-            },
-            {
-                "command": ["caelestia", "shell", "nexus", "open"],
-                "dangerous": false,
-                "description": "Configure the shell",
-                "enabled": true,
-                "icon": "settings",
-                "name": "Settings"
-            }
-        ],
-        "dragThreshold": 50,
-        "enableDangerousActions": true,
-        "enabled": true,
-        "favouriteApps": [],
-        "hiddenApps": [],
-        "maxShown": 7,
-        "maxWallpapers": 9,
-        "showOnHover": false,
-        "specialPrefix": "@",
-        "useFuzzy": {
-            "actions": false,
-            "apps": false,
-            "schemes": false,
-            "variants": false,
-            "wallpapers": false
-        },
-        "vimKeybinds": false
+        "enableDangerousActions": true
     },
     "lock": {
-        "enableFprint": true,
-        "enableHowdy": true,
-        "enabled": true,
-        "hideNotifs": false,
-        "maxFprintTries": 3,
-        "maxHowdyTries": 3,
-        "recolourLogo": true,
-        "triggerHowdyOnWake": true,
-        "useWallpaper": false
-    },
-    "nexus": {
-        "networkRescanInterval": 15000,
-        "wallpapersPerRow": 4
-    },
-    "notifs": {
-        "actionOnClick": false,
-        "clearThreshold": 0.3,
-        "defaultExpireTimeout": 5000,
-        "expandThreshold": 20,
-        "expire": true,
-        "fullscreen": "On",
-        "fullscreenExpireTimeout": 2000,
-        "groupPreviewNum": 3,
-        "openExpanded": false
-    },
-    "osd": {
-        "enableBrightness": true,
-        "enableMicrophone": true,
-        "enabled": true,
-        "hideDelay": 2000
-    },
-    "paths": {
-        "lockNoNotifsPic": "root:/assets/dino.png",
-        "lyricsDir": "~/Music/lyrics/",
-        "mediaGif": "root:/assets/bongocat.gif",
-        "noNotifsPic": "root:/assets/dino.png",
-        "sessionGif": "root:/assets/kurukuru.gif",
-        "wallpaperDir": "~/Pictures/Wallpapers"
+        "hideNotifs": true
     },
     "services": {
-        "audioIncrement": 0.1,
-        "brightnessIncrement": 0.1,
         "defaultPlayer": "Brave",
         "gpuType": "Nvidia",
-        "lyricsBackend": "Auto",
-        "maxVolume": 1,
-        "playerAliases": [
-            {
-                "from": "com.github.th_ch.youtube_music",
-                "to": "YT Music"
-            }
-        ],
-        "smartScheme": true,
-        "sensorUnits": "Celsius",
-        "weatherUnits": "Celsius",
         "useTwelveHourClock": false,
-        "visualiserBars": 60,
-        "weatherLocation": ""
-    },
-    "session": {
-        "commands": {
-            "hibernate": ["hibernate"],
-            "logout": ["logout"],
-            "reboot": ["reboot"],
-            "shutdown": ["poweroff"]
-        },
-        "dragThreshold": 30,
-        "enabled": true,
-        "icons": {
-            "hibernate": "downloading",
-            "logout": "logout",
-            "reboot": "cached",
-            "shutdown": "power_settings_new"
-        },
-        "vimKeybinds": false
-    },
-    "sidebar": {
-        "dragThreshold": 80,
-        "enabled": true,
-        "minHoverThreshold": 200,
-        "showOnHover": false
-    },
-    "utilities": {
-        "enabled": true,
-        "maxToasts": 4,
-        "quickToggles": [
-            {
-                "enabled": true,
-                "id": "wifi"
-            },
-            {
-                "enabled": true,
-                "id": "bluetooth"
-            },
-            {
-                "enabled": true,
-                "id": "mic"
-            },
-            {
-                "enabled": true,
-                "id": "settings"
-            },
-            {
-                "enabled": true,
-                "id": "gameMode"
-            },
-            {
-                "enabled": true,
-                "id": "dnd"
-            },
-            {
-                "enabled": false,
-                "id": "vpn"
-            }
-        ],
-        "toasts": {
-            "audioInputChanged": true,
-            "audioOutputChanged": true,
-            "capsLockChanged": true,
-            "chargingChanged": true,
-            "configLoaded": true,
-            "dndChanged": true,
-            "fullscreen": "off",
-            "gameModeChanged": true,
-            "kbLayoutChanged": true,
-            "kbLimit": true,
-            "nowPlaying": false,
-            "numLockChanged": true,
-            "vpnChanged": true
-        },
-        "vpn": {
-            "enabled": false,
-            "provider": [
-                {
-                    "displayName": "Wireguard (Your VPN)",
-                    "id": "vpn-mtvalsjv-5092s",
-                    "interface": "your-connection-name",
-                    "name": "wireguard"
-                }
-            ],
-            "selectedProvider": "vpn-mtvalsjv-5092s"
-        }
+        "weatherUnits": "Celsius"
     }
 }
