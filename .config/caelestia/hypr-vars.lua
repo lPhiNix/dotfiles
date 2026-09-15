@@ -7,7 +7,7 @@ return {
   kbCloseWindow = "SUPER + BackSpace",
   kbTerminal = "SUPER + Q",
 
-  cursorTheme = "Adwaita",
+  cursorTheme = "breeze_cursors",
 
   windowRounding = 8,
   windowBorderSize = 3,
