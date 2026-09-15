@@ -318,7 +318,6 @@
             "maxWindowIcons": 5,
             "occupiedBg": false,
             "occupiedLabel": "󰮯",
-            "perMonitorWorkspaces": true,
             "showWindows": true,
             "showWindowsOnSpecialWorkspaces": true,
             "shown": 5,
@@ -629,8 +628,8 @@
             }
         ],
         "smartScheme": true,
-        "useFahrenheit": false,
-        "useFahrenheitPerformance": false,
+        "sensorUnits": "Celsius",
+        "weatherUnits": "Celsius",
         "useTwelveHourClock": false,
         "visualiserBars": 60,
         "weatherLocation": ""
