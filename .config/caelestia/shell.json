@@ -8,183 +8,50 @@
         "deformScale": 1,
         "font": {
             "body": {
-                "family": "GoogleSansFlex",
-                "large": {
-                    "italic": false,
-                    "size": 16,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 400
-                },
-                "medium": {
-                    "italic": false,
-                    "size": 14,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 400
-                },
-                "small": {
-                    "italic": false,
-                    "size": 12,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 400
-                }
+                "family": "JetBrainsMono Nerd Font Mono"
             },
             "clock": "Rubik",
             "headline": {
-                "family": "GoogleSansFlex",
-                "large": {
-                    "italic": false,
-                    "size": 32,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 500
-                },
-                "medium": {
-                    "italic": false,
-                    "size": 28,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 500
-                },
-                "small": {
-                    "italic": false,
-                    "size": 24,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 500
-                }
+                "family": "GoogleSansFlex"
             },
             "icon": {
-                "extraLarge": {
-                    "italic": false,
-                    "size": 36,
-                    "vaxes": {},
-                    "weight": 400
-                },
-                "family": "Material Symbols Rounded",
-                "large": {
-                    "italic": false,
-                    "size": 24,
-                    "vaxes": {},
-                    "weight": 400
-                },
-                "medium": {
-                    "italic": false,
-                    "size": 18,
-                    "vaxes": {},
-                    "weight": 400
-                },
-                "small": {
-                    "italic": false,
-                    "size": 15,
-                    "vaxes": {},
-                    "weight": 400
-                }
+                "family": "Material Symbols Rounded"
             },
             "label": {
-                "family": "GoogleSansFlex",
-                "large": {
-                    "italic": false,
-                    "size": 14,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 500
-                },
-                "medium": {
-                    "italic": false,
-                    "size": 12,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 500
-                },
-                "small": {
-                    "italic": false,
-                    "size": 11,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 400
-                }
+                "family": "JetBrainsMono Nerd Font Mono"
             },
             "mono": {
-                "family": "CaskaydiaCove NF",
-                "large": {
-                    "italic": false,
-                    "size": 16,
-                    "vaxes": {},
-                    "weight": 400
-                },
-                "medium": {
-                    "italic": false,
-                    "size": 14,
-                    "vaxes": {},
-                    "weight": 400
-                },
-                "small": {
-                    "italic": false,
-                    "size": 12,
-                    "vaxes": {},
-                    "weight": 400
-                }
+                "family": "CaskaydiaCove NF"
             },
             "scale": 1,
             "title": {
-                "family": "GoogleSansFlex",
-                "large": {
-                    "italic": false,
-                    "size": 22,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 500
-                },
-                "medium": {
-                    "italic": false,
-                    "size": 16,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 500
-                },
-                "small": {
-                    "italic": false,
-                    "size": 14,
-                    "vaxes": {
-                        "ROND": 25
-                    },
-                    "weight": 500
-                }
+                "family": "JetBrainsMono Nerd Font Mono"
             },
             "workspaces": "Rubik"
-        },
-        "padding": {
-            "scale": 1
         },
         "rounding": {
             "scale": 0.5
         },
-        "spacing": {
-            "scale": 1
-        },
         "transparency": {
-            "base": 0.85,
-            "enabled": true,
-            "layers": 0.4
+            "enabled": true
         }
     },
     "background": {
         "desktopClock": {
-            "enabled": true
+            "background": {
+                "blur": true,
+                "enabled": false,
+                "opacity": 0.7
+            },
+            "enabled": true,
+            "invertColors": false,
+            "position": "bottom-right",
+            "scale": 1,
+            "shadow": {
+                "blur": 0.4,
+                "enabled": true,
+                "opacity": 0.7
+            }
         },
         "visualiser": {
             "autoHide": false,
