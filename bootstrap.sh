@@ -12,7 +12,7 @@
 # pulls its submodules (.nix, .config/nvim) and applies the configuration:
 #
 #   - NixOS        -> nixos-rebuild switch --flake ~/.nix#<host>
-#   - other Linux  -> home-manager switch --flake ~/.nix#<user>@<host>
+#   - other Linux  -> home-manager switch --flake ~/.nix#standalone
 #
 # The host defaults to `hostname -s`. Repos are public but cloned over SSH,
 # so a working GitHub SSH key is required.
@@ -20,7 +20,6 @@
 set -euo pipefail
 
 REPO="git@github.com:lPhiNix/dotfiles.git"
-USER_NAME="phinix"
 FLAKE="$HOME/.nix"
 GIT_DIR="$HOME/.dotfiles"
 HOST="$(hostname -s)"
@@ -76,7 +75,7 @@ if [ -e /etc/NIXOS ]; then
   fi
   sudo nixos-rebuild switch --flake "$FLAKE#$HOST"
 else
-  target="$USER_NAME@$HOST"
+  target="standalone"
   cfgs="$("${NIX[@]}" eval --json "$FLAKE#homeConfigurations" --apply 'builtins.attrNames' 2>/dev/null || echo '[]')"
   if ! printf '%s' "$cfgs" | grep -q "\"$target\""; then
     echo "!! homeConfigurations.\"$target\" does not exist. Available: $cfgs"
