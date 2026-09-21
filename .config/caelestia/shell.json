@@ -1,0 +1,152 @@
+{
+    "appearance": {
+        "anim": {
+            "durations": {
+                "scale": 1
+            }
+        },
+        "deformScale": 1,
+        "font": {
+            "body": {
+                "family": "JetBrainsMono Nerd Font Mono"
+            },
+            "clock": "Rubik",
+            "headline": {
+                "family": "GoogleSansFlex"
+            },
+            "icon": {
+                "family": "Material Symbols Rounded"
+            },
+            "label": {
+                "family": "JetBrainsMono Nerd Font Mono"
+            },
+            "mono": {
+                "family": "CaskaydiaCove NF"
+            },
+            "scale": 1,
+            "title": {
+                "family": "JetBrainsMono Nerd Font Mono"
+            },
+            "workspaces": "Rubik"
+        },
+        "rounding": {
+            "scale": 0.5
+        },
+        "transparency": {
+            "enabled": true
+        }
+    },
+    "background": {
+        "desktopClock": {
+            "background": {
+                "blur": true,
+                "enabled": false,
+                "opacity": 0.7
+            },
+            "enabled": true,
+            "invertColors": false,
+            "position": "bottom-right",
+            "scale": 1,
+            "shadow": {
+                "blur": 0.4,
+                "enabled": true,
+                "opacity": 0.7
+            }
+        },
+        "visualiser": {
+            "autoHide": false,
+            "enabled": true
+        },
+        "wallpaperEnabled": true
+    },
+    "bar": {
+        "clock": {
+            "showDate": true
+        },
+        "workspaces": {
+            "specialWorkspaceIcons": [
+                {
+                    "icon": "monitoring",
+                    "name": "sysmon"
+                },
+                {
+                    "icon": "sports_esports",
+                    "name": "steam"
+                }
+            ],
+            "windowIcons": [
+                {
+                    "icon": "terminal",
+                    "regex": "kitty"
+                },
+                {
+                    "icon": "travel_explore",
+                    "regex": "brave"
+                },
+                {
+                    "icon": "code",
+                    "regex": "code"
+                },
+                {
+                    "icon": "sticky_note_2",
+                    "regex": "obsidian"
+                },
+                {
+                    "icon": "folder",
+                    "regex": "nautilus"
+                },
+                {
+                    "icon": "monitoring",
+                    "regex": "btop"
+                },
+                {
+                    "icon": "sports_esports",
+                    "regex": "steam(_app_(default|[0-9]+))?"
+                }
+            ]
+        }
+    },
+    "border": {
+        "rounding": 15
+    },
+    "general": {
+        "apps": {
+            "explorer": ["nautilus", "--new-window"],
+            "terminal": ["kitty"]
+        },
+        "idle": {
+            "timeouts": [
+                {
+                    "idleAction": "lock",
+                    "inhibitWhenAudio": true,
+                    "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
+                    "timeout": 600
+                },
+                {
+                    "idleAction": "dpms off",
+                    "returnAction": "dpms on",
+                    "timeout": 900
+                },
+                {
+                    "enabled": false,
+                    "idleAction": ["suspendThenHibernate"],
+                    "timeout": 1800
+                }
+            ]
+        }
+    },
+    "launcher": {
+        "actionPrefix": "/",
+        "enableDangerousActions": true
+    },
+    "lock": {
+        "hideNotifs": true
+    },
+    "services": {
+        "clockFormat": "TwentyFourHour",
+        "defaultPlayer": "Brave",
+        "gpuType": "Nvidia",
+        "weatherUnits": "Celsius"
+    }
+}
