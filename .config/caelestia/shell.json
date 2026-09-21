@@ -66,6 +66,22 @@
         "workspaces": {
             "specialWorkspaceIcons": [
                 {
+                    "icon": "star",
+                    "name": "special"
+                },
+                {
+                    "icon": "forum",
+                    "name": "communication"
+                },
+                {
+                    "icon": "music_cast",
+                    "name": "music"
+                },
+                {
+                    "icon": "checklist",
+                    "name": "todo"
+                },
+                {
                     "icon": "monitoring",
                     "name": "sysmon"
                 },
