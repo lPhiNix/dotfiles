@@ -12,7 +12,7 @@
 # pulls its submodules (.nix, .config/nvim) and applies the configuration:
 #
 #   - NixOS        -> nixos-rebuild switch --flake ~/.nix#<host>
-#   - other Linux  -> home-manager switch --flake ~/.nix#standalone
+#   - other Linux  -> home-manager switch --flake ~/.nix#standalone-<arch>
 #
 # The host defaults to `hostname -s`. Repos are public but cloned over SSH,
 # so a working GitHub SSH key is required.
@@ -75,7 +75,15 @@ if [ -e /etc/NIXOS ]; then
   fi
   sudo nixos-rebuild switch --flake "$FLAKE#$HOST"
 else
-  target="standalone"
+  case "$(uname -m)" in
+    x86_64) system="x86_64-linux" ;;
+    aarch64 | arm64) system="aarch64-linux" ;;
+    *)
+      echo "!! Unsupported architecture: $(uname -m)."
+      exit 1
+      ;;
+  esac
+  target="standalone-$system"
   cfgs="$("${NIX[@]}" eval --json "$FLAKE#homeConfigurations" --apply 'builtins.attrNames' 2>/dev/null || echo '[]')"
   if ! printf '%s' "$cfgs" | grep -q "\"$target\""; then
     echo "!! homeConfigurations.\"$target\" does not exist. Available: $cfgs"
