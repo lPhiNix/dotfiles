@@ -1,35 +1,25 @@
 # PhiNix Dotfiles
 
-My personal Linux setup: a NixOS system configuration bundled with the dotfiles
-and a portable Home Manager layer, all versioned in a single repository.
+My personal Linux dotfiles: a Hyprland + Caelestia desktop, a Fish shell and the
+terminal and editor setup I use every day.
 
 ## Installation
 
 ### One-liner
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/lPhiNix/dotfiles/main/bootstrap.sh | bash
+curl -fsSL https://raw.githubusercontent.com/lPhiNix/dotfiles/main/install.sh | bash
 ```
 
 ### Manual
 
 ```sh
-git clone --bare git@github.com:lPhiNix/dotfiles.git "$HOME/.dotfiles"
-d() { git --git-dir="$HOME/.dotfiles" --work-tree="$HOME" "$@"; }
-d config status.showUntrackedFiles no
-d checkout -f
-d submodule update --init --recursive
+git clone https://github.com/lPhiNix/dotfiles.git "$HOME/.dotfiles"
+"$HOME/.dotfiles/install.sh"
 ```
 
-Then apply the configuration:
-
-```sh
-# NixOS
-sudo nixos-rebuild switch --flake ~/.nix#$(hostname -s)
-
-# other Linux (Home Manager)
-home-manager switch --flake ~/.nix#phinix@$(hostname -s)
-```
+The installer symlinks each top-level. It never overwrites real files or
+directories that are not symlinks, and it is safe to run again.
 
 ## Screenshots
 
