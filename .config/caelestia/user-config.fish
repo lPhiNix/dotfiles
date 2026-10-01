@@ -7,8 +7,9 @@
 # --------------------------------------------------
 # User fish configuration by lPhiNix
 
-abbr f        'fastfetch'
+abbr p        'phix'
 abbr d        'dotfiles'
+abbr f        'fastfetch'
 abbr v        'nvim'
 abbr vim      'nvim'
 abbr cls      'clear'
