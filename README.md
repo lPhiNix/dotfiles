@@ -37,4 +37,10 @@ This repository is also a flake exposing a Home Manager module:
 
 ## Screenshots
 
+### Blizz
+
+![screenshot](Pictures/Screenshots/blizz.png)
+
+### Noir
+
 ![screenshot](Pictures/Screenshots/noir.png)
