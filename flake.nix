@@ -48,6 +48,11 @@
             source = "${self}/.config/caelestia";
             recursive = true;
           };
+          "obs-studio" = {
+            source = "${self}/.config/obs-studio";
+            recursive = true;
+            force = true;
+          };
           "starship.toml" = {
             source = "${self}/.config/starship.toml";
           };
