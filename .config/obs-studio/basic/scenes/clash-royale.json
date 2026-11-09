@@ -70,7 +70,7 @@
             "id": "v4l2_input",
             "versioned_id": "v4l2_input",
             "settings": {
-                "device_id": "/dev/video2",
+                "device_id": "/dev/video10",
                 "input": 0,
                 "input_format": 0,
                 "resolution": "1080x2400",
