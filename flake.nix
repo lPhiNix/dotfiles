@@ -65,8 +65,14 @@
           "README.md" = {
             source = "${self}/README.md";
           };
+          "Pictures/Wallpapers/blizz.jpg" = {
+            source = "${self}/Pictures/Wallpapers/blizz.jpg";
+          };
           "Pictures/Wallpapers/noir.jpg" = {
             source = "${self}/Pictures/Wallpapers/noir.jpg";
+          };
+          "Pictures/Screenshots/blizz.png" = {
+            source = "${self}/Pictures/Screenshots/blizz.png";
           };
           "Pictures/Screenshots/noir.png" = {
             source = "${self}/Pictures/Screenshots/noir.png";
