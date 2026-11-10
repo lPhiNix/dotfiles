@@ -16,6 +16,8 @@
 #   - Only the tracked files are linked, one symlink per file.
 #   - ~/.config/<path> is symlinked to the matching file in the repository.
 #   - ~/Pictures/<path> is symlinked the same way.
+#   - README.md is linked into $HOME; install.sh and flake.nix are repo
+#     metadata and are not linked there.
 #   - Parent directories are created as real directories, so applications can
 #     keep writing their generated state next to the linked files.
 #   - Real (non-symlink) targets are never overwritten.
@@ -23,30 +25,52 @@
 
 set -euo pipefail
 
-# Repository location and clone target.
+# Repository location and clone target. This is the single source of truth:
+# the installer always works on $DOTFILES_DIR, regardless of where it was
+# invoked from.
 REPO_URL="${DOTFILES_REPO:-https://github.com/lPhiNix/dotfiles.git}"
 DEST="${DOTFILES_DIR:-$HOME/.dotfiles}"
 
-# Resolve the repository root. If this script is a real file living inside a
-# checkout, use its directory; otherwise (piped through bash) clone the repo.
-self="${BASH_SOURCE[0]:-}"
-repo=""
-if [ -n "$self" ]; then
-  candidate="$(cd "$(dirname "$self")" 2>/dev/null && pwd || true)"
-  if [ -n "$candidate" ] && [ -d "$candidate/.config" ]; then
-    repo="$candidate"
-  fi
+# Make a relative DOTFILES_DIR absolute.
+if [ "${DEST#/}" = "$DEST" ]; then
+  DEST="$PWD/$DEST"
 fi
 
-if [ -z "$repo" ]; then
-  repo="$DEST"
-  if [ ! -d "$repo/.git" ]; then
-    command -v git >/dev/null 2>&1 || { echo "!! 'git' is required."; exit 1; }
-    echo ">> Cloning $REPO_URL into $repo"
-    git clone "$REPO_URL" "$repo"
-  else
-    echo ">> Using existing clone at $repo"
+# Never allow the home directory (or /) to be treated as the repository.
+case "$DEST" in
+  "$HOME" | "$HOME/" | "/")
+    echo "!! Refusing to use '$DEST' as the dotfiles repository." >&2
+    exit 1
+    ;;
+esac
+
+# Do not mix install.sh with a Home Manager-managed configuration tree.
+if [ "${DOTFILES_FORCE:-0}" != "1" ] &&
+  find "$HOME/.config" -maxdepth 3 -type l -lname '/nix/store/*' -print -quit 2>/dev/null | grep -q .; then
+  echo "!! Home Manager-managed files detected in $HOME/.config." >&2
+  echo "   Use 'make switch' or 'home-manager switch' instead." >&2
+  echo "   Set DOTFILES_FORCE=1 to override." >&2
+  exit 1
+fi
+
+repo="$DEST"
+
+if [ -e "$repo" ] && [ ! -d "$repo" ]; then
+  echo "!! $repo exists and is not a directory." >&2
+  exit 1
+fi
+
+if [ -d "$repo/.git" ]; then
+  echo ">> Using existing clone at $repo"
+else
+  if [ -d "$repo" ] && [ -n "$(ls -A "$repo" 2>/dev/null)" ]; then
+    echo "!! $repo exists but is not a git checkout; refusing to touch it." >&2
+    exit 1
   fi
+
+  command -v git >/dev/null 2>&1 || { echo "!! 'git' is required." >&2; exit 1; }
+  echo ">> Cloning $REPO_URL into $repo"
+  git clone "$REPO_URL" "$repo"
 fi
 
 # link SRC DST
@@ -57,14 +81,21 @@ fi
 link() {
   local src="$1" dst="$2"
 
-  mkdir -p "$(dirname "$dst")"
-
-  if [ -e "$dst" ] && [ ! -L "$dst" ]; then
-    echo "!! $dst exists and is not a symlink; skipping"
+  # Never create a symlink that points to itself. This is the safety net that
+  # prevents the "too many levels of symbolic links" failure.
+  if [ "$src" = "$dst" ]; then
+    echo "!! refusing to link $dst to itself; skipping" >&2
     return
   fi
 
-  ln -sfn "$src" "$dst"
+  mkdir -p -- "$(dirname -- "$dst")"
+
+  if [ -e "$dst" ] && [ ! -L "$dst" ]; then
+    echo "!! $dst exists and is not a symlink; skipping" >&2
+    return
+  fi
+
+  ln -sfn -- "$src" "$dst"
   echo "$dst -> $src"
 }
 
@@ -94,18 +125,23 @@ while IFS= read -r -d '' rel; do
 done < <(list_files Pictures)
 
 # --- root files ------------------------------------------------------------
-# Tracked top-level files (README.md, install.sh, ...) go to $HOME. Hidden
-# entries (.gitignore) and directories (.config, Pictures) are skipped here.
+# Tracked top-level files go to $HOME, except repo metadata (install.sh and
+# flake.nix). README.md is intentionally linked. Hidden entries (.gitignore)
+# and directories (.config, Pictures) are skipped here.
 if git -C "$repo" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   while IFS= read -r -d '' rel; do
     case "$rel" in
-      */* | .*) continue ;;
+      */* | .* | flake.nix | install.sh) continue ;;
     esac
     link "$repo/$rel" "$HOME/$rel"
   done < <(git -C "$repo" ls-files -z -- .)
 else
   while IFS= read -r -d '' path; do
-    link "$path" "$HOME/${path##*/}"
+    base="${path##*/}"
+    case "$base" in
+      flake.nix | install.sh) continue ;;
+    esac
+    link "$path" "$HOME/$base"
   done < <(find "$repo" -maxdepth 1 -type f ! -name '.*' -print0)
 fi
 

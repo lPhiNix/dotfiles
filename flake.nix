@@ -65,9 +65,6 @@
           "README.md" = {
             source = "${self}/README.md";
           };
-          "install.sh" = {
-            source = "${self}/install.sh";
-          };
           "Pictures/Wallpapers/noir.jpg" = {
             source = "${self}/Pictures/Wallpapers/noir.jpg";
           };
