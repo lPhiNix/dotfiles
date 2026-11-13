@@ -1,4 +1,4 @@
-local vars = require("variables")
+local scheme = require("scheme.current")
 
 hl.config({
     general = {
@@ -6,14 +6,14 @@ hl.config({
 
         allow_tearing   = false, -- Allows `immediate` window rule to work
 
-        gaps_workspaces = vars.workspaceGaps,
-        gaps_in         = vars.windowGapsIn,
-        gaps_out        = vars.windowGapsOut,
-        border_size     = vars.windowBorderSize,
+        gaps_workspaces = 20,
+        gaps_in         = 5,
+        gaps_out        = 10,
+        border_size     = 3,
 
         col             = {
-            active_border   = vars.activeWindowBorderColour,
-            inactive_border = vars.inactiveWindowBorderColour,
+            active_border   = "rgba(" .. scheme.primary .. "e6)",
+            inactive_border = "rgba(" .. scheme.onSurfaceVariant .. "11)",
         },
     },
 

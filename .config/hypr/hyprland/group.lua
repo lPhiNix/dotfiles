@@ -1,16 +1,15 @@
 local scheme = require("scheme.current")
-local vars   = require("variables")
 
 hl.config({
     group = {
         col = {
-            border_active          = vars.activeWindowBorderColour,
-            border_inactive        = vars.inactiveWindowBorderColour,
-            border_locked_active   = vars.activeWindowBorderColour,
-            border_locked_inactive = vars.inactiveWindowBorderColour,
+            border_active          = "rgba(" .. scheme.primary .. "e6)",
+            border_inactive        = "rgba(" .. scheme.onSurfaceVariant .. "11)",
+            border_locked_active   = "rgba(" .. scheme.primary .. "e6)",
+            border_locked_inactive = "rgba(" .. scheme.onSurfaceVariant .. "11)",
         },
         groupbar = {
-            font_family               = "JetBrains Mono NF",
+            font_family               = "JetBrainsMono Nerd Font Mono",
             font_size                 = 15,
             gradients                 = true,
             gradient_round_only_edges = false,

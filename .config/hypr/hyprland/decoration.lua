@@ -1,26 +1,26 @@
-local vars = require("variables")
+local scheme = require("scheme.current")
 
 hl.config({
     decoration = {
-        rounding = vars.windowRounding,
+        rounding = 8,
 
         blur = {
-            enabled           = vars.blurEnabled,
-            xray              = vars.blurXray,
-            special           = vars.blurSpecialWs,
+            enabled           = true,
+            xray              = false,
+            special           = false,
             ignore_opacity    = true, -- Allows opacity blurring
             new_optimizations = true,
-            popups            = vars.blurPopups,
-            input_methods     = vars.blurInputMethods,
-            size              = vars.blurSize,
-            passes            = vars.blurPasses,
+            popups            = true,
+            input_methods     = true,
+            size              = 8,
+            passes            = 2,
         },
 
         shadow = {
-            enabled      = vars.shadowEnabled,
-            range        = vars.shadowRange,
-            render_power = vars.shadowRenderPower,
-            color        = vars.shadowColour,
+            enabled      = true,
+            range        = 15,
+            render_power = 4,
+            color        = "rgba(" .. scheme.inversePrimary .. "10)",
         },
     },
 })

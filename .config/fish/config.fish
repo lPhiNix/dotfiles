@@ -9,11 +9,11 @@ if status is-interactive
     # Better ls
     command -v eza &> /dev/null && alias ls='eza --icons --group-directories-first -1'
 
-    # Abbrs
+    # Git abbrs
     abbr lg 'lazygit'
     abbr gd 'git diff'
     abbr ga 'git add .'
-    abbr gc 'git commit -am'
+    abbr gc 'git commit -m'
     abbr gl 'git log'
     abbr gs 'git status'
     abbr gst 'git stash'
@@ -26,21 +26,50 @@ if status is-interactive
     abbr gbd 'git branch -d'
     abbr gco 'git checkout'
     abbr gsh 'git show'
+    abbr g 'git'
+    abbr gr 'git rebase'
+    abbr grc 'git rebase --continue'
+    abbr gcp 'git cherry-pick'
+    abbr gcl 'git clone'
+    abbr grv 'git remote -v'
+    abbr gpsu 'git push -u origin HEAD'
+
+    # Short commands
+    abbr p 'phix'
+    abbr d 'dotfiles'
+    abbr f 'fastfetch'
+    abbr v 'nvim'
+    abbr vim 'nvim'
+    abbr cls 'clear'
+    abbr q 'exit'
+    abbr shutdown 'shutdown -h now'
+
+    abbr cat 'bat'
+    abbr grep 'rg'
+    abbr find 'fd'
+    abbr top 'btop'
+
+    abbr rm 'rm -i'
+    abbr cp 'cp -i'
+    abbr mv 'mv -i'
+
+    abbr .. 'cd ..'
+    abbr ... 'cd ../..'
+    abbr .... 'cd ../../..'
 
     abbr l 'ls'
     abbr ll 'ls -l'
     abbr la 'ls -a'
     abbr lla 'ls -la'
 
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
+
     # Custom colours
     cat ~/.local/state/caelestia/sequences.txt 2> /dev/null
 
-    # For jumping between prompts in foot terminal
+    # For jumping between prompts in the terminal
     function mark_prompt_start --on-event fish_prompt
         echo -en "\e]133;A\e\\"
     end
-
-    # Custom fish config
-    set -q XDG_CONFIG_HOME && set -l cConf $XDG_CONFIG_HOME/caelestia || set -l cConf $HOME/.config/caelestia
-    source $cConf/user-config.fish 2> /dev/null
 end

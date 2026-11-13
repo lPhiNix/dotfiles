@@ -1,11 +1,8 @@
-local vars = require("variables")
-
 -- Themes
-hl.env("QT_QPA_PLATFORMTHEME", "qtengine")
 hl.env("QT_WAYLAND_DISABLE_WINDOWDECORATION", "1")
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
-hl.env("XCURSOR_THEME", vars.cursorTheme)
-hl.env("XCURSOR_SIZE", vars.cursorSize)
+hl.env("XCURSOR_THEME", "breeze_cursors")
+hl.env("XCURSOR_SIZE", "24")
 
 -- Toolkit backends
 hl.env("GDK_BACKEND", "wayland,x11")

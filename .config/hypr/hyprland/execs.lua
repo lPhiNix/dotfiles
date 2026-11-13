@@ -1,10 +1,9 @@
-local vars = require("variables")
-local fn   = require("utils.functions")
+local fn = require("utils.functions")
 
 hl.on("hyprland.start", function()
     -- Keyring and auth
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
-    hl.exec_cmd("/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1")
+    hl.exec_cmd("command -v hyprpolkitagent >/dev/null && hyprpolkitagent")
 
     -- Clipboard history
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
@@ -14,16 +13,18 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("trash-empty 30")
 
     -- Cursors
-    hl.exec_cmd("hyprctl setcursor " .. vars.cursorTheme .. " " .. vars.cursorSize)
-    hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme " .. vars.cursorTheme)
-    hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size " .. vars.cursorSize)
+    hl.exec_cmd("hyprctl setcursor breeze_cursors 24")
+    hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors")
+    hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 24")
 
-    -- Location provider and night light
-    hl.exec_cmd("/usr/lib/geoclue-2.0/demos/agent")
-    hl.exec_cmd("sleep 1 && gammastep")
+    -- Night light (manual coordinates: Madrid)
+    hl.exec_cmd("gammastep -l 40.4168:-3.7038")
 
     -- Forward bluetooth media commands to MPRIS
     hl.exec_cmd("mpris-proxy")
+
+    -- Ensure the shell has an initial colour scheme
+    hl.exec_cmd("test -f \"$HOME/.local/state/caelestia/scheme.json\" || caelestia scheme set -n caelestia")
 
     -- Start shell
     hl.exec_cmd("caelestia shell -d")
@@ -31,16 +32,7 @@ end)
 
 -- Resizer listeners
 local function apply_resizer_rules(win)
-    local float_center = {
-        hl.dsp.window.float({ action = "on", window = win }),
-        hl.dsp.window.center({ window = win }),
-    }
     local pip_actions = fn.move_actions(win) or {}
-
-    -- Bitwarden
-    fn.resizer(win, "Bitwarden", 20, 54, float_center, true, "class")                                       -- Native app
-    fn.resizer(win, "^Extension: %(Bitwarden Password Manager%) %- Bitwarden", 20, 54, float_center, false) -- Firefox
-    fn.resizer(win, "nngceckbapebfimnlniiiahkandclblb", 20, 54, float_center, true, "class")                -- Chromium
 
     -- Picture in picture
     fn.resizer(win, "Picture[- ]in[- ][Pp]icture", 0, 0, pip_actions, false)

@@ -1,8 +1,6 @@
-local vars = require("variables")
-
 hl.config({
     input = {
-        kb_layout          = "us",
+        kb_layout          = "es",
         numlock_by_default = false,
         repeat_delay       = 250,
         repeat_rate        = 35,
@@ -10,8 +8,8 @@ hl.config({
 
         touchpad           = {
             natural_scroll       = true,
-            disable_while_typing = vars.touchpadDisableTyping,
-            scroll_factor        = vars.touchpadScrollFactor,
+            disable_while_typing = true,
+            scroll_factor        = 0.3,
         },
     },
 

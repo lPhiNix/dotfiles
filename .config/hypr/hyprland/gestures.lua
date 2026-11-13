@@ -1,5 +1,4 @@
-local vars = require("variables")
-local fn   = require("utils.functions")
+local fn = require("utils.functions")
 
 hl.config({
     gestures = {
@@ -12,17 +11,17 @@ hl.config({
     },
 })
 
-hl.gesture({ fingers = vars.workspaceSwipeFingers, direction = "horizontal", action = "workspace" })
-hl.gesture({ fingers = vars.gestureFingers, direction = "up", action = "special", workspace_name = "special" })
+hl.gesture({ fingers = 4, direction = "horizontal", action = "workspace" })
+hl.gesture({ fingers = 3, direction = "up", action = "special", workspace_name = "special" })
 hl.gesture({
-    fingers   = vars.gestureFingers,
+    fingers   = 3,
     direction = "down",
-    action    = fn.toggle("specialws"),
+    action    = fn.toggle_special("specialws"),
 })
 hl.gesture({
-    fingers   = vars.gestureFingersMore,
+    fingers   = 4,
     direction = "down",
     action    = function()
-        hl.exec_cmd(vars.sleepGestureCmd)
+        hl.exec_cmd("systemctl suspend-then-hibernate")
     end,
 })
