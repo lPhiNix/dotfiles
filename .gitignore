@@ -1,0 +1,5 @@
+*.bak
+
+/.config/caelestia/monitors
+/.config/obs-studio/basic/scenes/*
+!/.config/obs-studio/basic/scenes/mobile.json

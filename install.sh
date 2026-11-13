@@ -13,21 +13,16 @@
 # piped (curl | bash) it is cloned to $DOTFILES_DIR first.
 #
 # Conventions:
-#   - Only the tracked files are linked, one symlink per file.
-#   - ~/.config/<path> is symlinked to the matching file in the repository.
-#   - ~/Pictures/<path> is symlinked the same way.
-#   - README.md is linked into $HOME; install.sh and flake.nix are repo
-#     metadata and are not linked there.
-#   - Parent directories are created as real directories, so applications can
-#     keep writing their generated state next to the linked files.
+#   - Tracked files are linked one symlink per file, except the writable app
+#     dirs (Caelestia and the OBS profile/scenes), which are linked as whole
+#     directories so the apps can save through them.
+#   - ~/.config/<path> and ~/Pictures/<path> mirror the repository.
+#   - README.md is linked into $HOME; install.sh and flake.nix are metadata.
 #   - Real (non-symlink) targets are never overwritten.
 #   - Re-running the script is safe (idempotent).
 
 set -euo pipefail
 
-# Repository location and clone target. This is the single source of truth:
-# the installer always works on $DOTFILES_DIR, regardless of where it was
-# invoked from.
 REPO_URL="${DOTFILES_REPO:-https://github.com/lPhiNix/dotfiles.git}"
 DEST="${DOTFILES_DIR:-$HOME/.dotfiles}"
 
@@ -48,8 +43,7 @@ esac
 if [ "${DOTFILES_FORCE:-0}" != "1" ] &&
   find "$HOME/.config" -maxdepth 3 -type l -lname '/nix/store/*' -print -quit 2>/dev/null | grep -q .; then
   echo "!! Home Manager-managed files detected in $HOME/.config." >&2
-  echo "   Use 'make switch' or 'home-manager switch' instead." >&2
-  echo "   Set DOTFILES_FORCE=1 to override." >&2
+  echo "   Use 'home-manager switch' instead (DOTFILES_FORCE=1 to override)." >&2
   exit 1
 fi
 
@@ -76,13 +70,11 @@ fi
 # link SRC DST
 #
 # Symlink SRC at DST, creating the parent directory when needed. A target that
-# exists and is not already a symlink is left untouched, so user data is never
-# clobbered. Safe to call repeatedly.
+# exists and is not a symlink is left untouched, so user data is never
+# clobbered. Works for files and directories; safe to call repeatedly.
 link() {
   local src="$1" dst="$2"
 
-  # Never create a symlink that points to itself. This is the safety net that
-  # prevents the "too many levels of symbolic links" failure.
   if [ "$src" = "$dst" ]; then
     echo "!! refusing to link $dst to itself; skipping" >&2
     return
@@ -99,50 +91,34 @@ link() {
   echo "$dst -> $src"
 }
 
-# list_files DIR
-#
-# Print every tracked file under DIR (repository-relative, NUL-separated).
-# Uses git when available and falls back to find for plain-tarball installs.
-list_files() {
-  local dir="$1"
-  if git -C "$repo" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    git -C "$repo" ls-files -z -- "$dir"
-  else
-    (cd "$repo" && find "$dir" ! -type d -print0)
-  fi
-}
-
 # --- config ----------------------------------------------------------------
-# One symlink per tracked file (hypr, fish, kitty, btop, caelestia, Code, ...).
+# Static files are linked one by one. Caelestia and OBS are linked as whole
+# directories below because their apps save with atomic renames.
 while IFS= read -r -d '' rel; do
+  case "$rel" in
+    .config/caelestia/* | .config/obs-studio/*) continue ;;
+  esac
   link "$repo/$rel" "$HOME/$rel"
-done < <(list_files .config)
+done < <(git -C "$repo" ls-files -z -- .config)
+
+link "$repo/.config/caelestia" "$HOME/.config/caelestia"
+link "$repo/.config/obs-studio/basic/profiles/phone-vertical" \
+  "$HOME/.config/obs-studio/basic/profiles/phone-vertical"
+link "$repo/.config/obs-studio/basic/scenes" \
+  "$HOME/.config/obs-studio/basic/scenes"
 
 # --- pictures --------------------------------------------------------------
-# One symlink per tracked image (Wallpapers, Screenshots).
 while IFS= read -r -d '' rel; do
   link "$repo/$rel" "$HOME/$rel"
-done < <(list_files Pictures)
+done < <(git -C "$repo" ls-files -z -- Pictures)
 
 # --- root files ------------------------------------------------------------
-# Tracked top-level files go to $HOME, except repo metadata (install.sh and
-# flake.nix). README.md is intentionally linked. Hidden entries (.gitignore)
-# and directories (.config, Pictures) are skipped here.
-if git -C "$repo" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-  while IFS= read -r -d '' rel; do
-    case "$rel" in
-      */* | .* | flake.nix | install.sh) continue ;;
-    esac
-    link "$repo/$rel" "$HOME/$rel"
-  done < <(git -C "$repo" ls-files -z -- .)
-else
-  while IFS= read -r -d '' path; do
-    base="${path##*/}"
-    case "$base" in
-      flake.nix | install.sh) continue ;;
-    esac
-    link "$path" "$HOME/$base"
-  done < <(find "$repo" -maxdepth 1 -type f ! -name '.*' -print0)
-fi
+# README.md is linked; repo metadata and hidden entries are skipped.
+while IFS= read -r -d '' rel; do
+  case "$rel" in
+    */* | .* | flake.nix | install.sh) continue ;;
+  esac
+  link "$repo/$rel" "$HOME/$rel"
+done < <(git -C "$repo" ls-files -z -- .)
 
 echo ">> Done."
