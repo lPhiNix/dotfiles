@@ -1,7 +1,0 @@
-bbenoist.nix
-esbenp.prettier-vscode
-formulahendry.code-runner
-miguelsolorio.fluent-icons
-miguelsolorio.symbols
-oracle.oracle-java
-soramanew.caelestia-vscode-integration

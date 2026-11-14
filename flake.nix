@@ -31,8 +31,8 @@
           source = "${self}/.config/fastfetch";
           recursive = true;
         };
-        "Code" = {
-          source = "${self}/.config/Code";
+        "VSCodium" = {
+          source = "${self}/.config/VSCodium";
           recursive = true;
         };
         "nvim" = {
@@ -49,9 +49,6 @@
         };
         "starship.toml" = {
           source = "${self}/.config/starship.toml";
-        };
-        "code-flags.conf" = {
-          source = "${self}/.config/code-flags.conf";
         };
       };
 

@@ -3,7 +3,7 @@ local fn = require("utils.functions")
 -- Apps
 local terminal       = "kitty"
 local browser        = "brave"
-local editor         = "code"
+local editor         = "codium"
 local fileExplorer   = "nautilus"
 local audioSettings  = "pwvucontrol"
 
