@@ -48,6 +48,7 @@
     "workbench.colorTheme": "Caelestia",
     "workbench.productIconTheme": "fluent-icons",
     "workbench.iconTheme": "symbols",
+    "workbench.experimental.modernUI": true,
     "terminal.integrated.defaultProfile.linux": "fish",
     "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font Mono",
     "editor.fontFamily": "JetBrainsMono Nerd Font Mono, monospace",
