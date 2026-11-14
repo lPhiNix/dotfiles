@@ -66,57 +66,83 @@
         "workspaces": {
             "specialWorkspaceIcons": [
                 {
+                    "flags": "",
                     "icon": "star",
-                    "name": "special"
+                    "name": "special",
+                    "regex": ""
                 },
                 {
+                    "flags": "",
                     "icon": "forum",
-                    "name": "communication"
+                    "name": "communication",
+                    "regex": ""
                 },
                 {
+                    "flags": "",
                     "icon": "music_cast",
-                    "name": "music"
+                    "name": "music",
+                    "regex": ""
                 },
                 {
+                    "flags": "",
                     "icon": "checklist",
-                    "name": "todo"
+                    "name": "todo",
+                    "regex": ""
                 },
                 {
+                    "flags": "",
                     "icon": "monitoring",
-                    "name": "sysmon"
+                    "name": "sysmon",
+                    "regex": ""
                 },
                 {
+                    "flags": "",
                     "icon": "sports_esports",
-                    "name": "steam"
+                    "name": "steam",
+                    "regex": ""
                 }
             ],
             "windowIcons": [
                 {
+                    "flags": "",
                     "icon": "terminal",
+                    "name": "",
                     "regex": "kitty"
                 },
                 {
+                    "flags": "",
                     "icon": "travel_explore",
+                    "name": "",
                     "regex": "brave"
                 },
                 {
+                    "flags": "",
                     "icon": "code",
-                    "regex": "code"
+                    "name": "",
+                    "regex": "codium"
                 },
                 {
+                    "flags": "",
                     "icon": "sticky_note_2",
+                    "name": "",
                     "regex": "obsidian"
                 },
                 {
+                    "flags": "",
                     "icon": "folder",
+                    "name": "",
                     "regex": "nautilus"
                 },
                 {
+                    "flags": "",
                     "icon": "monitoring",
+                    "name": "",
                     "regex": "btop"
                 },
                 {
+                    "flags": "",
                     "icon": "sports_esports",
+                    "name": "",
                     "regex": "steam(_app_(default|[0-9]+))?"
                 }
             ]
@@ -133,6 +159,7 @@
         "idle": {
             "timeouts": [
                 {
+                    "enabled": true,
                     "idleAction": "lock",
                     "inhibitWhenAudio": true,
                     "inhibitWhenCharging": false,
@@ -140,13 +167,20 @@
                     "timeout": 600
                 },
                 {
+                    "enabled": true,
                     "idleAction": "dpms off",
+                    "inhibitWhenAudio": false,
+                    "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
                     "returnAction": "dpms on",
                     "timeout": 900
                 },
                 {
                     "enabled": false,
                     "idleAction": ["suspendThenHibernate"],
+                    "inhibitWhenAudio": false,
+                    "inhibitWhenCharging": false,
+                    "respectInhibitors": true,
                     "timeout": 1800
                 }
             ]
@@ -154,7 +188,8 @@
     },
     "launcher": {
         "actionPrefix": "/",
-        "enableDangerousActions": true
+        "enableDangerousActions": true,
+        "favouriteApps": ["brave-browser", "codium", "org.gnome.Nautilus"]
     },
     "lock": {
         "hideNotifs": true
