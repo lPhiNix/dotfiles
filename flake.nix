@@ -31,10 +31,6 @@
           source = "${self}/.config/fastfetch";
           recursive = true;
         };
-        "VSCodium" = {
-          source = "${self}/.config/VSCodium";
-          recursive = true;
-        };
         "nvim" = {
           source = "${self}/.config/nvim";
           recursive = true;
@@ -61,6 +57,11 @@
           config.lib.file.mkOutOfStoreSymlink "${live}/.config/obs-studio/basic/profiles/phone-vertical";
         "obs-studio/basic/scenes".source =
           config.lib.file.mkOutOfStoreSymlink "${live}/.config/obs-studio/basic/scenes";
+
+        "VSCodium/User/settings.json".source =
+          config.lib.file.mkOutOfStoreSymlink "${live}/.config/VSCodium/User/settings.json";
+        "VSCodium/User/keybindings.json".source =
+          config.lib.file.mkOutOfStoreSymlink "${live}/.config/VSCodium/User/keybindings.json";
       };
     in {
       options.dotfiles.enable = lib.mkEnableOption "PhiNix dotfiles";

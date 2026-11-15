@@ -19,32 +19,22 @@
     "editor.codeActionsOnSave": {
         "source.organizeImports": "explicit",
     },
-    "codeium.enableCodeLens": false,
     "typescript.preferences.preferTypeOnlyAutoImports": true,
     "editor.suggestSelection": "recentlyUsedByPrefix",
     "git.enableSmartCommit": true,
-    "codeium.enableConfig": {
-        "*": true,
-        "fish": true,
-        "qml": true,
-    },
     "[c]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     },
     "[cpp]": {
         "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd",
     },
-    "doxdocgen.generic.boolReturnsTrueFalse": false,
     "terminal.integrated.enableMultiLinePasteWarning": "never",
-    "qt-qml.qmlls.additionalImportPaths": ["/usr/lib/qt6/qml"],
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
     },
     "ruff.lineLength": 120,
-    "python.languageServer": "Pylance",
+    "python.languageServer": "None",
     "editor.inlayHints.enabled": "off",
-    "qt-qml.qmlls.customExePath": "/usr/bin/qmlls6",
-    "qt-qml.doNotAskForQmllsDownload": true,
     "workbench.colorTheme": "Caelestia",
     "workbench.productIconTheme": "fluent-icons",
     "workbench.iconTheme": "symbols",
