@@ -35,7 +35,7 @@ local function apply_resizer_rules(win)
     local pip_actions = fn.move_actions(win) or {}
 
     -- Picture in picture
-    fn.resizer(win, "Picture[- ]in[- ][Pp]icture", 0, 0, pip_actions, false)
+    fn.resizer(win, "^Picture[- ]in[- ][Pp]icture$", 0, 0, pip_actions, false)
 end
 
 hl.on("window.title", apply_resizer_rules)

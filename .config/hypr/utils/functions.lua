@@ -3,8 +3,10 @@ local function wsaction(action, range, i)
         local activews = hl.get_active_workspace()
         if activews then
             local id = activews.id
-            local s  = (i - 1) * 10 + (id % 10)
-            local t  = math.floor((id - 1) / 10) * 10 + i
+            -- Workspace 10 (and 20, 30...) is column 10, not column 0.
+            local slot = (id - 1) % 10 + 1
+            local s    = (i - 1) * 10 + slot
+            local t    = math.floor((id - 1) / 10) * 10 + i
             local z  = (range == "group") and s or t
 
             if action == "move" then
@@ -57,7 +59,6 @@ local function resizer(window, pattern, x_percent, y_percent, actions, exact, fi
             sz.window = window
             hl.dispatch(hl.dsp.window.resize(sz))
         end
-        hl.dispatch(hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "true", window = window }))
     end
 end
 
@@ -84,6 +85,7 @@ local function move_actions(win)
         return {
             hl.dsp.window.resize({ x = x_resize, y = y_resize, window = win }),
             hl.dsp.window.move({ x = move_x, y = move_y, relative = false, window = win }),
+            hl.dsp.window.set_prop({ prop = "keep_aspect_ratio", value = "true", window = win }),
         }
     end
 end
