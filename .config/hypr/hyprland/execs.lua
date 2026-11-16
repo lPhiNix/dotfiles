@@ -1,9 +1,8 @@
 local fn = require("utils.functions")
 
 hl.on("hyprland.start", function()
-    -- Keyring and auth
+    -- Keyring
     hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
-    hl.exec_cmd("command -v hyprpolkitagent >/dev/null && hyprpolkitagent")
 
     -- Clipboard history
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
@@ -14,8 +13,6 @@ hl.on("hyprland.start", function()
 
     -- Cursors
     hl.exec_cmd("hyprctl setcursor breeze_cursors 24")
-    hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-theme breeze_cursors")
-    hl.exec_cmd("gsettings set org.gnome.desktop.interface cursor-size 24")
 
     -- Night light (manual coordinates: Madrid)
     hl.exec_cmd("gammastep -l 40.4168:-3.7038")
